@@ -4,6 +4,8 @@ import Carousel from '../Components/Carousel'
 import Theme from '../Components/Theme'
 import Timeline from '../Components/Timeline'
 import Tourism from '../Components/tourismHomePage'
+import Sponsers from '../Components/Sponsers'
+
 const Home = () => {
   return (
     <div>
@@ -12,7 +14,7 @@ const Home = () => {
       <Theme />
       <Timeline/>
       <Tourism/>
-  
+      <Sponsers />
     </div>
   )
 }
