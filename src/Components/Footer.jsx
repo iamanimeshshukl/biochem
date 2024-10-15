@@ -1,6 +1,6 @@
 import React from 'react'
 import logo2 from "../assets/BIO-METACON_Logo-removebg-preview.png"
-import Timecount from "../Components/ui/Timecount"
+//import Timecount from "../Components/ui/Timecount"
 const Footer = () => {
   return (
     <div>
@@ -9,7 +9,8 @@ const Footer = () => {
     <div className="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
       <div className="md:w-[316px]">
        
-      <img src={logo2}/>
+      <img src={logo2} className='w-25 h-25'/>
+      
       </div>
       <div className="md:w-[316px]">
         <div className="mt-[23px] flex">
