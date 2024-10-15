@@ -74,7 +74,7 @@ const Navbar = () => {
             href="/general-info"
             className="text-sm font-semibold text-white"
           >
-            General Info.
+            Discover Kanpur
           </a>
         </li>
         <li>

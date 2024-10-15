@@ -3,7 +3,7 @@ import Hero from "../Components/Hero"
 import Carousel from '../Components/Carousel'
 import Theme from '../Components/Theme'
 import Timeline from '../Components/Timeline'
-
+import Tourism from '../Components/tourismHomePage'
 const Home = () => {
   return (
     <div>
@@ -11,6 +11,7 @@ const Home = () => {
       <Hero />
       <Theme />
       <Timeline/>
+      <Tourism/>
   
     </div>
   )
