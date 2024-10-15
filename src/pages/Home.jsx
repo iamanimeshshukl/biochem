@@ -3,6 +3,7 @@ import Hero from "../Components/Hero"
 import Carousel from '../Components/Carousel'
 import Theme from '../Components/Theme'
 import Timeline from '../Components/Timeline'
+import Sponsers from '../Components/Sponsers'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Hero />
       <Theme />
       <Timeline/>
+      <Sponsers />
   
     </div>
   )
