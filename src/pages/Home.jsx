@@ -5,17 +5,18 @@ import Theme from '../Components/Theme'
 import Timeline from '../Components/Timeline'
 import Tourism from '../Components/tourismHomePage'
 import Sponsers from '../Components/Sponsers'
-//import Card from '../Components/Card'
+import Events from '../Components/Events'
 import Person from '../Components/Person'
 
 const Home = () => {
   return (
     <div>
+      <Theme />
      <Carousel />
       <Hero />
-      <Theme />
       <br></br><br></br>
       <Timeline/>
+      <Events />
       <Person />
       <Tourism/>
       <br></br>

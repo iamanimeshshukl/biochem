@@ -1,42 +1,27 @@
-import React from 'react'
+import React from "react";
 
-const Theme = () => {
+const MarqueeNews = () => {
+  const newsItems = [
+    "Breaking: Major tech company announces new AI breakthrough!",
+    "Stock markets rally as inflation fears subside.",
+    "New study shows benefits of a balanced diet.",
+    "Climate change summit discusses global action.",
+    "Smart public toilets: A revolutionary health solution!",
+  ];
+
   return (
-    <div className='container mx-auto py-10'>
-      <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-800">
-              Important Notification
-            </h2>
-            <p className="mt-2 text-lg text-gray-500">
-            International Conference BIO-METACON 2025
-            </p>
-          </div>
-          <br></br><br></br>
-<div
-  class="group flex flex-col justify-start items-start gap-2 w-96 h-56 duration-500 relative rounded-lg p-4 bg-purple-500 hover:-translate-y-2 hover:shadow-xl shadow-purple-400"
->
-  <div
-    class="absolute duration-700 shadow-md group-hover:-translate-y-4 group-hover:-translate-x-4 -bottom-10 -right-10 w-1/2 h-1/2 rounded-lg bg-purple-400"
-    alt="image here"
-  ></div>
-  <div class="">
-    <h2 class="text-2xl font-bold mb-2 text-white">Elegant Card</h2>
-    <p class="text-gray-200 line-clamp-3">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis
-      magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id
-      porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus.
-      Pellentesque maximus posuere tortor vitae consequat.
-    </p>
-  </div>
-  <button
-    class="hover:bg-purple-400 bg-purple-600 text-white mt-6 rounded p-2 px-6"
-  >
-    Explore
-  </button>
-</div>
-
+    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-4">
+      <div className="overflow-hidden relative">
+        <div className="whitespace-nowrap animate-marquee text-white font-semibold text-lg md:text-2xl">
+          {newsItems.map((item, index) => (
+            <span key={index} className="mx-8">
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Theme
+export default MarqueeNews;
