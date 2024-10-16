@@ -19,6 +19,7 @@ const App = () => {
   return (
     <Router>
       <Header /> 
+      <br></br>
       <Navbar /> 
       <Routes>
       <Route path="*" element={<Home />} />

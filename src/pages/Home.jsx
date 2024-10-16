@@ -12,8 +12,10 @@ const Home = () => {
      <Carousel />
       <Hero />
       <Theme />
+      <br></br><br></br>
       <Timeline/>
       <Tourism/>
+      <br></br>
       <Sponsers />
     </div>
   )

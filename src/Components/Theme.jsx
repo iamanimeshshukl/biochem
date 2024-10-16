@@ -3,7 +3,15 @@ import React from 'react'
 const Theme = () => {
   return (
     <div className='container mx-auto py-10'>
-     
+      <div className="text-center">
+            <h2 className="text-3xl font-bold text-gray-800">
+              Important Notification
+            </h2>
+            <p className="mt-2 text-lg text-gray-500">
+            International Conference BIO-METACON 2025
+            </p>
+          </div>
+          <br></br><br></br>
 <div
   class="group flex flex-col justify-start items-start gap-2 w-96 h-56 duration-500 relative rounded-lg p-4 bg-purple-500 hover:-translate-y-2 hover:shadow-xl shadow-purple-400"
 >
@@ -11,7 +19,6 @@ const Theme = () => {
     class="absolute duration-700 shadow-md group-hover:-translate-y-4 group-hover:-translate-x-4 -bottom-10 -right-10 w-1/2 h-1/2 rounded-lg bg-purple-400"
     alt="image here"
   ></div>
-
   <div class="">
     <h2 class="text-2xl font-bold mb-2 text-white">Elegant Card</h2>
     <p class="text-gray-200 line-clamp-3">

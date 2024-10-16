@@ -7,7 +7,7 @@ import jkTemple from '../assets/places/JK-Temple.jpg'
 const tourismHomePage = () => {
   return (
     <div>
-      <section className="bg-zinc-50 overflow-hidden">
+      <section className="bg-white overflow-hidden">
         <div className="max-w-screen-xl 2xl:max-w-screen-3xl px-8 md:px-12 mx-auto py-6 lg:py-12 space-y-24 flex flex-col justify-center">
           {/* Section Title */}
           <div className="text-center">
