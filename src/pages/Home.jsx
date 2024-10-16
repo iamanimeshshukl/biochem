@@ -5,6 +5,8 @@ import Theme from '../Components/Theme'
 import Timeline from '../Components/Timeline'
 import Tourism from '../Components/tourismHomePage'
 import Sponsers from '../Components/Sponsers'
+//import Card from '../Components/Card'
+import Person from '../Components/Person'
 
 const Home = () => {
   return (
@@ -14,6 +16,7 @@ const Home = () => {
       <Theme />
       <br></br><br></br>
       <Timeline/>
+      <Person />
       <Tourism/>
       <br></br>
       <Sponsers />

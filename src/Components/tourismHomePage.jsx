@@ -11,7 +11,7 @@ const tourismHomePage = () => {
         <div className="max-w-screen-xl 2xl:max-w-screen-3xl px-8 md:px-12 mx-auto py-6 lg:py-12 space-y-24 flex flex-col justify-center">
           {/* Section Title */}
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-800">
+          <h2 className="text-3xl font-bold text-gray-800">
               Places To Visit In Kanpur
             </h2>
             <p className="mt-2 text-lg text-gray-500">
