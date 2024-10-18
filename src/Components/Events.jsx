@@ -5,8 +5,8 @@ import { useRef } from 'react';
 const Events = () => {
   // Animation variants for each card
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 }, // Start slightly below the view
-    visible: { opacity: 1, y: 0 }, // Animate to full opacity and move up
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
   };
 
   // Container variant for staggering children animations
@@ -28,64 +28,87 @@ const Events = () => {
       />
       <section className="pb-12 mx-auto md:pb-20 max-w-7xl">
         <div className="py-4 text-center md:py-8">
-          <h4 className="text-base font-bold tracking-wide text-center uppercase text-teal-600">
+          <h4 className="text-base font-bold tracking-wide text-center uppercase text-teal-500">
             THEME OF CONFERENCE
           </h4>
-          <p className="mt-2 tracking-tight text-gray-900 text:xl md:text-2xl">
+          <motion.p
+            className="mt-2 tracking-tight text-gray-800 text-xl md:text-3xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             International Conference BIO-METACON 2025
-          </p>
+          </motion.p>
         </div>
 
         {/* Animate the container for the event cards */}
         <motion.div
-          className="gap-8 space-y-8 md:columns-2 lg:columns-3"
+          className="gap-8 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
         >
           {Array.from({ length: 7 }).map((_, index) => {
             const cardRef = useRef(null);
-            const isInView = useInView(cardRef, { once: false }); // Change to false for multiple triggers
+            const isInView = useInView(cardRef, { once: false });
 
             return (
               <motion.div
-                ref={cardRef} // Attach ref to the card
+                ref={cardRef}
                 key={index}
-                className="p-8 bg-white border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10"
+                className="relative p-8 bg-gradient-to-br from-yellow-100 to-blue-100 shadow-md aspect-auto rounded-3xl overflow-hidden"
                 variants={itemVariants}
                 initial="hidden"
-                animate={isInView ? "visible" : "hidden"} // Control animation based on visibility
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} // Added hover effect
-                viewport={{ once: false, amount: 0.3 }} // Trigger animation when 30% of the card is in view
+                animate={isInView ? 'visible' : 'hidden'}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                whileHover={{
+                  scale: 1.05,
+                  rotate: 1,
+                  boxShadow: '0px 10px 20px rgba(0,0,0,0.1)',
+                  transition: { duration: 0.3 },
+                }}
+                viewport={{ once: false, amount: 0.3 }}
               >
-                <div className="flex gap-4 items-start">
-                  <img
-                    className="w-12 h-12 rounded-full"
-                    src={`https://randomuser.me/api/portraits/women/${index + 2}.jpg`} 
+                <motion.div className="flex gap-4 items-start">
+                  <motion.img
+                    className="w-12 h-12 rounded-full border-2 border-white"
+                    src={`https://randomuser.me/api/portraits/women/${index + 10}.jpg`}
                     alt="user avatar"
                     width={200}
                     height={200}
                     loading="lazy"
+                    whileHover={{ scale: 1.2 }}
                   />
-                  <div className="flex-1 flex justify-between items-start">
-                    <div>
-                      <h6 className="text-lg font-medium text-gray-700">
-                        {index % 2 === 0
-                          ? 'Sustainable Bioprocesses and Products'
-                          : `User ${index + 1}`}
-                      </h6>
-                      <p className="text-sm text-gray-500">
-                        {index % 2 === 0 ? 'Researcher' : 'Professional'}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <p className="mt-8">
+                  <motion.div
+                    className="flex-1"
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <h6 className="text-lg font-semibold text-gray-800">
+                      {index % 2 === 0
+                        ? 'Sustainable Bioprocesses and Products'
+                        : `User ${index + 1}`}
+                    </h6>
+                    <p className="text-sm text-gray-600">
+                      {index % 2 === 0 ? 'Researcher' : 'Professional'}
+                    </p>
+                  </motion.div>
+                </motion.div>
+                <p className="mt-8 text-gray-700">
                   {index % 2 === 0
                     ? 'Discussion on various sustainable processes and products.'
                     : 'Great insights on market trends and product development.'}
                 </p>
+                {/* Add floating icons for flair */}
+                <motion.div
+                  className="absolute top-2 right-4 text-gray-600"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  <i className="fas fa-leaf"></i>
+                </motion.div>
               </motion.div>
             );
           })}
