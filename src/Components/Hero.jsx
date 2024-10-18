@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 const Hero = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false }); // Change to 'once: false' to animate on both enter and exit
 
   return (
     <div ref={ref}>

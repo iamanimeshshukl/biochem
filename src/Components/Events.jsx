@@ -1,11 +1,23 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const Events = () => {
-  // Animation variants
+  // Animation variants for each card
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 50 }, // Start slightly below the view
+    visible: { opacity: 1, y: 0 }, // Animate to full opacity and move up
+  };
+
+  // Container variant for staggering children animations
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3, // Delay between each child animation
+      },
+    },
   };
 
   return (
@@ -23,45 +35,61 @@ const Events = () => {
             International Conference BIO-METACON 2025
           </p>
         </div>
-        <div className="gap-8 space-y-8 md:columns-2 lg:columns-3">
-          {Array.from({ length: 7 }).map((_, index) => (
-            <motion.div
-              key={index}
-              className="p-8 bg-white border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10"
-              variants={itemVariants}
-              initial="hidden"
-              whileInView="visible"
-              exit="hidden"
-              transition={{ duration: 0.5, delay: index * 0.2 }} // Stagger the appearance
-            >
-              <div className="flex gap-4 items-start">
-                <img
-                  className="w-12 h-12 rounded-full"
-                  src={`https://randomuser.me/api/portraits/women/${index + 2}.jpg`} // Update with a different image source if needed
-                  alt="user avatar"
-                  width={200}
-                  height={200}
-                  loading="lazy"
-                />
-                <div className="flex-1 flex justify-between items-start">
-                  <div>
-                    <h6 className="text-lg font-medium text-gray-700">
-                      {index % 2 === 0 ? 'Sustainable Bioprocesses and Products' : `User ${index + 1}`}
-                    </h6>
-                    <p className="text-sm text-gray-500">
-                      {index % 2 === 0 ? 'Researcher' : 'Professional'}
-                    </p>
+
+        {/* Animate the container for the event cards */}
+        <motion.div
+          className="gap-8 space-y-8 md:columns-2 lg:columns-3"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+        >
+          {Array.from({ length: 7 }).map((_, index) => {
+            const cardRef = useRef(null);
+            const isInView = useInView(cardRef, { once: false }); // Change to false for multiple triggers
+
+            return (
+              <motion.div
+                ref={cardRef} // Attach ref to the card
+                key={index}
+                className="p-8 bg-white border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10"
+                variants={itemVariants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"} // Control animation based on visibility
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} // Added hover effect
+                viewport={{ once: false, amount: 0.3 }} // Trigger animation when 30% of the card is in view
+              >
+                <div className="flex gap-4 items-start">
+                  <img
+                    className="w-12 h-12 rounded-full"
+                    src={`https://randomuser.me/api/portraits/women/${index + 2}.jpg`} 
+                    alt="user avatar"
+                    width={200}
+                    height={200}
+                    loading="lazy"
+                  />
+                  <div className="flex-1 flex justify-between items-start">
+                    <div>
+                      <h6 className="text-lg font-medium text-gray-700">
+                        {index % 2 === 0
+                          ? 'Sustainable Bioprocesses and Products'
+                          : `User ${index + 1}`}
+                      </h6>
+                      <p className="text-sm text-gray-500">
+                        {index % 2 === 0 ? 'Researcher' : 'Professional'}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <p className="mt-8">
-                {index % 2 === 0
-                  ? 'Discussion on various sustainable processes and products.'
-                  : 'Great insights on market trends and product development.'}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+                <p className="mt-8">
+                  {index % 2 === 0
+                    ? 'Discussion on various sustainable processes and products.'
+                    : 'Great insights on market trends and product development.'}
+                </p>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </section>
     </div>
   );
