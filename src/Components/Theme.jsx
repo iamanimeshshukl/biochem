@@ -1,24 +1,40 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import Framer Motion
 
 const MarqueeNews = () => {
   const newsItems = [
-    "Breaking: Major tech company announces new AI breakthrough!",
-    "Stock markets rally as inflation fears subside.",
-    "New study shows benefits of a balanced diet.",
-    "Climate change summit discusses global action.",
-    "Smart public toilets: A revolutionary health solution!",
+    "Welcome to the Happiest City in the World",
+    "International Conference BIO-METACON 2025",
+    "March 01-03, 2025, Harcourt Butler Technical University (HBTU), Kanpur, India",
+    "Abstract Submission Start 15/10/2024.",
   ];
 
   return (
-    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-4">
+    <div className="bg-gradient-to-r from-teal-400 via-cyan-500 to-indigo-600 py-4">
       <div className="overflow-hidden relative">
-        <div className="whitespace-nowrap animate-marquee text-white font-semibold text-lg md:text-2xl">
+        <motion.div
+          className="whitespace-nowrap flex animate-marquee text-white font-semibold text-lg md:text-2xl"
+          initial={{ x: "100%" }}
+          animate={{ x: "-100%" }}
+          transition={{
+            duration: 10,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
           {newsItems.map((item, index) => (
-            <span key={index} className="mx-8">
+            <motion.span
+              key={index}
+              className="mx-8"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 0.5 }}
+            >
               {item}
-            </span>
+            </motion.span>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

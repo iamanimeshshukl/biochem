@@ -11,7 +11,7 @@ const cardVariants = {
 
 const Card = () => {
   return (
-    <div className="flex flex-col items-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col items-center bg-white py-12 px-4 sm:px-6 lg:px-8">
       {committeeData.map((section, sectionIndex) => (
         <motion.div
           key={sectionIndex}
