@@ -12,6 +12,7 @@ const Home = () => {
   return (
     <div>
       <Theme />
+      <br></br>
      <Carousel />
       <Hero />
       <br></br><br></br>
