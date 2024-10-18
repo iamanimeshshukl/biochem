@@ -10,6 +10,7 @@ import image3 from '../assets/3.png';
 
 const Carousel = () => {
   const slides = [image1, image2, image3]; // Images from assets folder
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Auto play logic for manual Framer Motion usage
