@@ -15,7 +15,7 @@ const Events = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, // Delay between each child animation
+        staggerChildren: 0.3,
       },
     },
   };
@@ -28,7 +28,7 @@ const Events = () => {
       />
       <section className="pb-12 mx-auto md:pb-20 max-w-7xl">
         <div className="py-4 text-center md:py-8">
-          <h4 className="text-base font-bold tracking-wide text-center uppercase text-teal-500">
+          <h4 className="text-base font-bold tracking-wide text-center uppercase text-gray-700">
             THEME OF CONFERENCE
           </h4>
           <motion.p
@@ -56,28 +56,30 @@ const Events = () => {
               <motion.div
                 ref={cardRef}
                 key={index}
-                className="relative p-8 bg-gradient-to-br from-yellow-100 to-blue-100 shadow-md aspect-auto rounded-3xl overflow-hidden"
+                className="relative p-8 bg-white shadow-xl aspect-auto rounded-3xl overflow-hidden border border-gray-200"
                 variants={itemVariants}
                 initial="hidden"
                 animate={isInView ? 'visible' : 'hidden'}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 whileHover={{
                   scale: 1.05,
-                  rotate: 1,
-                  boxShadow: '0px 10px 20px rgba(0,0,0,0.1)',
-                  transition: { duration: 0.3 },
+                  rotateY: 10,
+                  rotateX: 10,
+                  boxShadow: '0px 20px 40px rgba(0,0,0,0.2)',
+                  transition: { duration: 0.4 },
                 }}
                 viewport={{ once: false, amount: 0.3 }}
               >
                 <motion.div className="flex gap-4 items-start">
                   <motion.img
-                    className="w-12 h-12 rounded-full border-2 border-white"
-                    src={`https://randomuser.me/api/portraits/women/${index + 10}.jpg`}
+                    className="w-12 h-12 rounded-full border-2 border-gray-300"
+                    src={`https://randomuser.me/api/portraits/men/${index + 12}.jpg`}
                     alt="user avatar"
                     width={200}
                     height={200}
                     loading="lazy"
-                    whileHover={{ scale: 1.2 }}
+                    whileHover={{ scale: 1.3, rotateZ: 10 }}
+                    transition={{ duration: 0.3 }}
                   />
                   <motion.div
                     className="flex-1"
@@ -85,24 +87,24 @@ const Events = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <h6 className="text-lg font-semibold text-gray-800">
+                    <h6 className="text-lg font-semibold text-gray-700">
                       {index % 2 === 0
                         ? 'Sustainable Bioprocesses and Products'
                         : `User ${index + 1}`}
                     </h6>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-500">
                       {index % 2 === 0 ? 'Researcher' : 'Professional'}
                     </p>
                   </motion.div>
                 </motion.div>
-                <p className="mt-8 text-gray-700">
+                <p className="mt-8 text-gray-600">
                   {index % 2 === 0
                     ? 'Discussion on various sustainable processes and products.'
                     : 'Great insights on market trends and product development.'}
                 </p>
                 {/* Add floating icons for flair */}
                 <motion.div
-                  className="absolute top-2 right-4 text-gray-600"
+                  className="absolute top-2 right-4 text-gray-400"
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.5 }}

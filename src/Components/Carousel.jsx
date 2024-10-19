@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion'; // Import motion from framer-motion
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel CSS
-import { Carousel as ResponsiveCarousel } from 'react-responsive-carousel'; // Renaming to avoid conflict
+import { motion } from 'framer-motion';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel as ResponsiveCarousel } from 'react-responsive-carousel';
 
 // Importing images from assets
 import image1 from '../assets/1.png';
@@ -10,7 +10,6 @@ import image3 from '../assets/3.png';
 
 const Carousel = () => {
   const slides = [image1, image2, image3]; // Images from assets folder
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Auto play logic for manual Framer Motion usage
@@ -35,7 +34,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full mx-auto">
+    <div className="relative w-full h-screen overflow-hidden">
       {/* Responsive Carousel with Framer Motion Animations */}
       <ResponsiveCarousel
         showArrows={false}
@@ -46,22 +45,37 @@ const Carousel = () => {
         infiniteLoop
         autoPlay
         interval={3000}
-        className="overflow-visible" // Make sure the carousel is not cropped
+        className="overflow-visible"
       >
         {slides.map((slide, index) => (
-          <div key={index} className="w-full h-[70vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-screen">
+          <div key={index} className="w-full h-screen md:h-screen sm:h-[50vh] xs:h-[40vh]">
             <motion.img
               src={slide}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full object-contain" // Ensure image doesn't crop and is fully visible
+              className="w-full h-full object-cover" // Ensure image covers the full area
               initial={{ opacity: 0, scale: 1.1 }} // Initial state
               animate={{ opacity: 1, scale: 1 }} // Animate to this state
               exit={{ opacity: 0, scale: 0.9 }} // Exit animation
               transition={{ duration: 0.5 }} // Animation duration
+              whileHover={{ scale: 1.05, rotate: 1 }} // 3D effect on hover
             />
           </div>
         ))}
       </ResponsiveCarousel>
+
+      {/* Navigation buttons */}
+      <button
+        onClick={goToPrevious}
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200 z-10"
+      >
+        &lt;
+      </button>
+      <button
+        onClick={goToNext}
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-200 z-10"
+      >
+        &gt;
+      </button>
     </div>
   );
 };

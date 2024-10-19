@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { gsap } from 'gsap';
 
 const Hero = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false }); // Change to 'once: false' to animate on both enter and exit
+  const isInView = useInView(ref, { once: false });
+
+  useEffect(() => {
+    // GSAP animation for the background SVG when it comes into view
+    if (isInView) {
+      gsap.fromTo(
+        ref.current,
+        { scale: 0.5, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 1, ease: 'power3.out' }
+      );
+    }
+  }, [isInView]);
 
   return (
     <section
@@ -80,8 +91,8 @@ const Hero = () => {
         viewBox="0 0 800 800"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 0.3, scale: isInView ? 1 : 0.5 }}
+        initial={{ scale: 0.5, opacity: 0 }}
+        animate={{ scale: isInView ? 1 : 0.5, opacity: 0.3 }}
         transition={{ duration: 1, ease: 'easeInOut' }}
       >
         <circle cx="400" cy="400" r="350" stroke="#4A90E2" strokeWidth="100" />

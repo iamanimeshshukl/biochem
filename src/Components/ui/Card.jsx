@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { gsap } from 'gsap';
 import committeeData from '../../desgination_data/data';
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1 },
   hover: { scale: 1.05 },
 };
 
@@ -18,7 +18,7 @@ const Card = () => {
           className="w-full mb-16 text-center"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }} // Triggers animation when 20% of the section is visible
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ delay: sectionIndex * 0.2, duration: 0.6 }}
         >
           {/* Section Title */}
@@ -38,16 +38,26 @@ const Card = () => {
               const cardRef = useRef(null);
               const isInView = useInView(cardRef, { once: false }); // Allow the card to animate multiple times
 
+              // GSAP effect when the card comes into view
+              React.useEffect(() => {
+                if (isInView) {
+                  gsap.fromTo(cardRef.current, 
+                    { scale: 0.8, opacity: 0 }, 
+                    { scale: 1, opacity: 1, duration: 0.6, delay: memberIndex * 0.2 }
+                  );
+                }
+              }, [isInView, memberIndex]);
+
               return (
                 <motion.div
                   ref={cardRef} // Attach ref to the card
                   key={memberIndex}
-                  className="relative max-w-xs w-full sm:w-80 mx-auto bg-white rounded-lg overflow-hidden shadow-lg"
+                  className="relative max-w-xs w-full sm:w-80 mx-auto bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300"
                   variants={cardVariants}
                   whileHover="hover"
                   initial="hidden"
-                  animate={isInView ? "visible" : "hidden"} // Animate based on visibility
-                  transition={{ duration: 0.6, delay: memberIndex * 0.2 }}
+                  animate={isInView ? "visible" : "hidden"}
+                  transition={{ duration: 0.6 }}
                   viewport={{ once: false, amount: 0.2 }} // Trigger animation when 20% of the card is in view
                 >
                   {/* Member Image */}
@@ -57,7 +67,7 @@ const Card = () => {
                         src={member.img} // Dynamically use the image from the data
                         className="object-cover h-full w-full"
                         alt={member.name}
-                        whileHover={{ rotate: 360 }}
+                        whileHover={{ scale: 1.1, rotate: 360 }}
                         transition={{ duration: 1 }}
                       />
                     </div>

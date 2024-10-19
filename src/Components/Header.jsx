@@ -45,7 +45,7 @@ const Header = () => {
         transition={{ duration: 0.7, delay: 0.5 }}
       >
         <p className="bg-purple-500 bg-opacity-90 py-4 px-6 md:px-10 rounded-full shadow-lg inline-block text-white">
-          March 01-03, 2025, Harcourt Butler Technical University (HBTU), Kanpur, India
+          March 1st-3rd, 2025, Harcourt Butler Technical University (HBTU), Kanpur, India
         </p>
       </motion.div>
 
