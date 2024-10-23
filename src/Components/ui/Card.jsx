@@ -23,7 +23,7 @@ const Card = () => {
         >
           {/* Section Title */}
           <motion.h2
-            className="text-2xl sm:text-3xl font-bold mb-8 text-blue-800 uppercase tracking-wide"
+            className="text-2xl sm:text-3xl font-bold mb-8 text-black uppercase tracking-wide"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}

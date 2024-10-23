@@ -17,7 +17,8 @@ import Home from "./pages/Home.jsx"
 
 const App = () => {
   return (
-    <Router>
+<div>
+<Router>
       <Header /> 
       <Navbar /> 
       <Routes>
@@ -33,6 +34,7 @@ const App = () => {
       </Routes>
       <Footer /> 
     </Router>
+</div>
   );
 };
 

@@ -7,15 +7,19 @@ import Tourism from '../Components/tourismHomePage'
 import Sponsers from '../Components/Sponsers'
 import Events from '../Components/Events'
 import Person from '../Components/Person'
+import Biometacon from '../Components/Biometacon'
 
 const Home = () => {
   return (
     <div>
       <Theme />
-      <br></br>
      <Carousel />
+     <br></br>
       <Hero />
       <br></br><br></br>
+      <Biometacon/>
+      <br>
+      </br>
       <Timeline/>
       <Events />
       <Person />

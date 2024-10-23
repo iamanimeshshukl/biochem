@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
    <>
-  <div className="relative bg-rose-500">
+  <div className="relative bg-blue-800">
   <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
     <div className="inline-flex items-center space-x-2">
     

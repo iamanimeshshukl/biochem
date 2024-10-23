@@ -96,6 +96,26 @@ const Hero = () => {
         transition={{ duration: 1, ease: 'easeInOut' }}
       >
         <circle cx="400" cy="400" r="350" stroke="#4A90E2" strokeWidth="100" />
+        {/* Add moving circles */}
+        {[...Array(5)].map((_, index) => (
+          <motion.circle
+            key={index}
+            cx={Math.random() * 800}
+            cy={Math.random() * 800}
+            r={Math.random() * 20 + 10} // Random radius between 10 and 30
+            fill={`hsl(${Math.random() * 360}, 100%, 50%)`} // Random color
+            animate={{
+              y: [Math.random() * 20, Math.random() * -20, 0], // Random y movement
+            }}
+            transition={{
+              y: {
+                yoyo: Infinity,
+                duration: 4 + Math.random() * 4, // Random duration between 4s and 8s
+                ease: 'easeInOut',
+              },
+            }}
+          />
+        ))}
       </motion.svg>
     </section>
   );
