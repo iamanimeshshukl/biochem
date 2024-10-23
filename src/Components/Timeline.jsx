@@ -130,8 +130,8 @@ const Timeline = () => {
                 className="order-1 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg shadow-xl w-5/12 px-6 py-4 z-20"
                 variants={childVariants}
               >
-                <h3 className="mb-2 font-bold text-xl text-center">{event.title}</h3>
-                <p className="text-white text-lg leading-tight text-center">{event.date}</p>
+                <h3 className="mb-2 font-normal text-xl text-center">{event.title}</h3>
+                <p className="text-white text-normal leading-tight text-center">{event.date}</p>
               </motion.div>
             </motion.div>
           ))}
