@@ -5,7 +5,7 @@ import blueWorld from '../assets/places/BlueWorld.jpg';
 import motiJheel from '../assets/places/MotiJheel.jpg';
 import jkTemple from '../assets/places/JK-Temple.jpg';
 
-const tourismHomePage = () => {
+const TourismHomePage = () => {
   // Define animation variants for cards
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -16,7 +16,7 @@ const tourismHomePage = () => {
   return (
     <div>
       <section className="bg-white overflow-hidden">
-        <div className="max-w-screen-xl 2xl:max-w-screen-3xl px-8 md:px-12 mx-auto py-6 lg:py-12 space-y-24 flex flex-col justify-center">
+        <div className="max-w-screen-xl 2xl:max-w-screen-3xl px-8 md:px-12 mx-auto py-6 lg:py-12 space-y-12 flex flex-col justify-center">
           {/* Section Title */}
           <motion.div
             className="text-center"
@@ -24,17 +24,17 @@ const tourismHomePage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl font-extrabold text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800">
               Places To Visit In Kanpur
             </h2>
-            <p className="mt-4 text-lg text-gray-500">
+            <p className="mt-4 text-md md:text-lg text-gray-500">
               Explore the best spots to visit in Kanpur during the conference.
             </p>
           </motion.div>
 
           {/* Image Cards Section */}
           <motion.div
-            className="flex justify-center items-center space-x-4"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center"
             initial="hidden"
             animate="visible"
             variants={{
@@ -46,7 +46,7 @@ const tourismHomePage = () => {
               href="#_"
               variants={cardVariants}
               whileHover="hover"
-              className="w-[350px] h-[250px] relative transform rotate-6 hover:rotate-0 transition duration-500 z-10"
+              className="w-full h-[250px] relative transform rotate-6 hover:rotate-0 transition duration-500 z-10"
             >
               <motion.img
                 src={iskcon}
@@ -61,7 +61,7 @@ const tourismHomePage = () => {
               href="#_"
               variants={cardVariants}
               whileHover="hover"
-              className="w-[350px] h-[250px] relative transform -rotate-12 hover:rotate-0 transition duration-500 z-20 -ml-6"
+              className="w-full h-[250px] relative transform -rotate-12 hover:rotate-0 transition duration-500 z-20"
             >
               <motion.img
                 src={blueWorld}
@@ -76,7 +76,7 @@ const tourismHomePage = () => {
               href="#_"
               variants={cardVariants}
               whileHover="hover"
-              className="w-[350px] h-[250px] relative transform rotate-6 hover:rotate-0 transition duration-500 z-10 -ml-6"
+              className="w-full h-[250px] relative transform rotate-6 hover:rotate-0 transition duration-500 z-10"
             >
               <motion.img
                 src={motiJheel}
@@ -91,7 +91,7 @@ const tourismHomePage = () => {
               href="#_"
               variants={cardVariants}
               whileHover="hover"
-              className="w-[350px] h-[250px] relative transform -rotate-12 hover:rotate-0 transition duration-500 z-30 -ml-6"
+              className="w-full h-[250px] relative transform -rotate-12 hover:rotate-0 transition duration-500 z-30"
             >
               <motion.img
                 src={jkTemple}
@@ -107,4 +107,4 @@ const tourismHomePage = () => {
   );
 };
 
-export default tourismHomePage;
+export default TourismHomePage;
