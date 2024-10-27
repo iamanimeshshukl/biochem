@@ -15,11 +15,9 @@ const Home = () => {
       <Theme />
      <Carousel />
      <br></br>
+     <Biometacon/>
       <Hero />
       <br></br><br></br>
-      <Biometacon/>
-      <br>
-      </br>
       <Timeline/>
       <Events />
       <Person />
