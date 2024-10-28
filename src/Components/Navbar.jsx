@@ -1,129 +1,159 @@
-import React from 'react'
-// import { Button } from "@material-tailwind/react";
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { gsap } from 'gsap';
 
-// import { useNavigate } from 'react-router-dom'
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const topLineRef = useRef(null);
+  const middleLineRef = useRef(null);
+  const bottomLineRef = useRef(null);
+
+  // GSAP animation for the hamburger icon
+  useEffect(() => {
+    if (menuOpen) {
+      gsap.to(topLineRef.current, { rotate: 45, y: 7, duration: 0.4 });
+      gsap.to(middleLineRef.current, { opacity: 0, duration: 0.2 });
+      gsap.to(bottomLineRef.current, { rotate: -45, y: -7, duration: 0.4 });
+    } else {
+      gsap.to(topLineRef.current, { rotate: 0, y: 0, duration: 0.4 });
+      gsap.to(middleLineRef.current, { opacity: 1, duration: 0.2 });
+      gsap.to(bottomLineRef.current, { rotate: 0, y: 0, duration: 0.4 });
+    }
+  }, [menuOpen]);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  // Framer Motion variants for text links
+  const linkVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1, 
+      transition: { duration: 0.6, ease: 'easeInOut' } 
+    },
+    hover: {
+      scale: 1.2, 
+      rotate: 5, 
+      color: '#FFD700', 
+      transition: { duration: 0.3 }
+    }
+  };
+
+  // Staggering animations for the links (one after another)
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Links will appear with a small delay between them
+      },
+    },
+  };
 
   return (
-   <>
-  <div className="relative bg-blue-800">
-  <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-    <div className="inline-flex items-center space-x-2">
-    
-    {/* <img
-          width="7%"
-          height="2%"
-          viewBox="0 0 50 56"
-          fill="none"
-          src="https://images.vexels.com/media/users/3/229303/isolated/preview/82ac98287e375fd8be833c9190b51fb1-running-monkey-logo.png"
-        >
-        </img> */}
-     
-    <div className="hidden grow items-start lg:flex">
-      <ul className="ml-12 inline-flex space-x-8">
-        <li>
-          <a
-            href="/home"
-            className="text-sm font-semibold text-white"
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="/about"
-            className="text-sm font-semibold text-white"
-          >
-            About Us
-          </a>
-        </li>
-        <li>
-          <a
-            href="/abstracts"
-            className="text-sm font-semibold text-white"
-          >
-            Abstracts
-          </a>
-        </li>
-        <li>
-          <a
-            href="/publications"
-            className="text-sm font-semibold text-white"
-          >
-            Publications
-          </a>
-        </li>
-        <li>
-          <a
-            href="/scientific-programs"
-            className="text-sm font-semibold text-white"
-          >
-            Scientific Programs
-          </a>
-        </li>
-        <li>
-          <a
-            href="/registration-sponsorship"
-            className="text-sm font-semibold text-white"
-          >
-            Registration & Sponsorship
-          </a>
-        </li>
-        <li>
-          <a
-            href="/general-info"
-            className="text-sm font-semibold text-white"
-          >
-            Discover Kanpur
-          </a>
-        </li>
-        <li>
-          <a
-            href="/ibs-team"
-            className="text-sm font-semibold text-white"
-          >
-            IBS Team
-          </a>
-        </li>
-        <li>
-          <a
-            href="/contacts"
-            className="text-sm font-semibold text-white"
-          >
-            Contacts
-          </a>
-        </li>
-      </ul>
-    </div>
-    </div>
-   
-    <div>
-    {/* <div className="hidden lg:block">
-    <Button onClick={handelClick} className='bg-blue-500 text-white rounded-full'>Log Out</Button>
-    </div> */}
-    </div>
-    <div className="lg:hidden">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        className="h-6 w-6 cursor-pointer"
+    <>
+      <motion.div
+        initial={{ opacity: 0, y: -100 }} // Navbar sliding from the top
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="relative bg-blue-800"
       >
-        <line x1="4" y1="12" x2="20" y2="12"></line>
-        <line x1="4" y1="6" x2="20" y2="6"></line>
-        <line x1="4" y1="18" x2="20" y2="18"></line>
-      </svg>
-    </div>
-  </div>
-</div>
+        <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.8, ease: 'backOut' }} // Bounce effect for the icon
+            className="inline-flex items-center space-x-2"
+          >
+            <div className="hidden grow items-start lg:flex">
+              <motion.ul
+                className="ml-12 inline-flex space-x-8"
+                initial="hidden"
+                animate="visible"
+                variants={containerVariants} // Staggered animation
+              >
+                {[
+                  { label: 'Home', href: '/home' },
+                  { label: 'About Us', href: '/about' },
+                  { label: 'Abstracts', href: '/abstracts' },
+                  { label: 'Publications', href: '/publications' },
+                  { label: 'Scientific Programs', href: '/scientific-programs' },
+                  { label: 'Registration & Sponsorship', href: '/registration-sponsorship' },
+                  { label: 'Discover Kanpur', href: '/general-info' },
+                  { label: 'IBS Team', href: '/ibs-team' },
+                  { label: 'Contacts', href: '/contacts' }
+                ].map((link, index) => (
+                  <motion.li
+                    key={index}
+                    initial="hidden"
+                    animate="visible"
+                    variants={linkVariants} // Hover and entrance animations for links
+                    whileHover="hover"
+                  >
+                    <a href={link.href} className="text-sm font-semibold text-white">
+                      {link.label}
+                    </a>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
+          </motion.div>
 
-   </>
-  )
-}
+          <div className="lg:hidden">
+            <button onClick={toggleMenu} aria-label="Toggle menu">
+              <motion.div
+                className="space-y-1"
+                whileHover={{ scale: 1.2, rotate: 15 }} // Rotation on hover for hamburger
+                transition={{ duration: 0.4, type: 'spring', stiffness: 200 }}
+              >
+                <div ref={topLineRef} className="h-1 w-6 bg-white"></div>
+                <div ref={middleLineRef} className="h-1 w-6 bg-white"></div>
+                <div ref={bottomLineRef} className="h-1 w-6 bg-white"></div>
+              </motion.div>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu with Framer Motion and bounce effect */}
+        <motion.div
+          className="lg:hidden bg-blue-700"
+          initial={{ height: 0 }}
+          animate={{ height: menuOpen ? 'auto' : 0 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          style={{ overflow: 'hidden' }}
+        >
+          <ul className="px-4 py-4 space-y-4">
+            {[
+              { label: 'Home', href: '/home' },
+              { label: 'About Us', href: '/about' },
+              { label: 'Abstracts', href: '/abstracts' },
+              { label: 'Publications', href: '/publications' },
+              { label: 'Scientific Programs', href: '/scientific-programs' },
+              { label: 'Registration & Sponsorship', href: '/registration-sponsorship' },
+              { label: 'Discover Kanpur', href: '/general-info' },
+              { label: 'IBS Team', href: '/ibs-team' },
+              { label: 'Contacts', href: '/contacts' }
+            ].map((link, index) => (
+              <motion.li
+                key={index}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                whileHover={{ scale: 1.1, color: '#FFD700', transition: { duration: 0.3 } }}
+              >
+                <a href={link.href} className="text-sm font-semibold text-white">
+                  {link.label}
+                </a>
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
+      </motion.div>
+    </>
+  );
+};
+
 export default Navbar;
