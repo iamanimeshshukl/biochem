@@ -11,7 +11,7 @@ const Sponsors = () => {
 
   return (
     <div>
-      <div className="bg-white w-full px-4 pt-16 pb-16" id="faq">
+      <div className="w-full px-4 pt-16 pb-16" id="faq">
         <motion.h2
           className="text-4xl font-bold text-center"
           initial={{ opacity: 0, y: -30 }}
@@ -28,7 +28,7 @@ const Sponsors = () => {
         >
         </motion.p>
         <motion.div
-          className="mx-auto w-full max-w-4xl bg-white justify-center items-center grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8"
+          className="mx-auto w-full max-w-4xl justify-center items-center grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8"
           initial="hidden"
           animate="visible"
           variants={{

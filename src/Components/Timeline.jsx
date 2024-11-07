@@ -4,6 +4,7 @@ import gsap from 'gsap';
 
 const Timeline = () => {
   const lineRef = useRef(null);
+  const svgBackgroundRef = useRef(null);
 
   useEffect(() => {
     // GSAP animation for drawing the vertical timeline line
@@ -16,6 +17,21 @@ const Timeline = () => {
         ease: 'power2.inOut',
       }
     );
+
+    // GSAP animation for moving bubbles in the background
+    gsap.to(svgBackgroundRef.current.children, {
+      x: () => Math.random() * 50 - 25, // Random x-axis motion
+      y: () => Math.random() * 50 - 25, // Random y-axis motion
+      duration: 6,
+      repeat: -1,
+      yoyo: true,
+      ease: 'power1.inOut',
+      stagger: {
+        each: 0.3,
+        repeat: -1,
+        yoyo: true,
+      },
+    });
   }, []);
 
   // Framer Motion animation variants for timeline events
@@ -34,7 +50,6 @@ const Timeline = () => {
     exit: { opacity: 0, scale: 0.8, y: -50 },
   };
 
-  // Sequential animation for child elements
   const staggeredVariants = {
     visible: {
       transition: {
@@ -53,18 +68,29 @@ const Timeline = () => {
     exit: { opacity: 0, x: 20 },
   };
 
-  // Hover effect for timeline events
   const hoverEffect = {
     whileHover: { scale: 1.05, boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.2)' },
   };
 
   return (
-    <div className="relative">
-      <div className="text-center mb-8">
+    <div className="relative overflow-hidden">
+      {/* Moving Bubbles SVG Background */}
+      <div className="absolute inset-0 z-0" ref={svgBackgroundRef}>
+        <svg width="100%" height="100%" className="absolute opacity-20">
+          {/* Adding circles as bubbles */}
+          <circle cx="200" cy="300" r="80" fill="#FFD54F" />
+          <circle cx="600" cy="400" r="60" fill="#FF7043" />
+          <circle cx="150" cy="600" r="40" fill="#4FC3F7" />
+          <circle cx="700" cy="700" r="90" fill="#81C784" />
+          <circle cx="300" cy="150" r="50" fill="#BA68C8" />
+        </svg>
+      </div>
+
+      <div className="relative z-10 text-center mb-8">
         <h2 className="text-4xl font-extrabold text-gray-900">Event Timeline</h2>
       </div>
 
-      <div className="container mx-auto px-4 py-12 relative">
+      <div className="container mx-auto px-4 py-12 relative z-10">
         {/* Vertical Line Animation */}
         <div
           ref={lineRef}
@@ -72,9 +98,7 @@ const Timeline = () => {
         ></div>
 
         <div className="relative wrap overflow-hidden">
-          {/* Timeline Events */}
-          {[
-            {
+          {[{
               id: 1,
               title: 'Abstract Submission Start',
               date: '15/10/2024',

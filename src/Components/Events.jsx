@@ -1,15 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import gsap from 'gsap';
 
 const Events = () => {
-  // Animation variants for each card
+  const svgBackgroundRef = useRef(null);
+
+  useEffect(() => {
+    // GSAP animation for bubbles moving in random directions
+    gsap.to(svgBackgroundRef.current.children, {
+      x: () => Math.random() * 100 - 50,  // Random horizontal movement
+      y: () => Math.random() * 100 - 50,  // Random vertical movement
+      duration: 8,
+      repeat: -1,
+      yoyo: true,
+      ease: 'power1.inOut',
+      stagger: {
+        each: 0.3,
+        repeat: -1,
+        yoyo: true,
+      },
+    });
+  }, []);
+
   const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
 
-  // Container variant for staggering children animations
   const containerVariants = {
     hidden: { opacity: 1 },
     visible: {
@@ -21,12 +38,24 @@ const Events = () => {
   };
 
   return (
-    <div>
+    <div className="relative overflow-hidden">
+      {/* Moving Bubbles SVG Background */}
+      <div className="absolute inset-0 z-0" ref={svgBackgroundRef}>
+        <svg width="100%" height="100%" className="absolute opacity-20">
+          <circle cx="200" cy="300" r="60" fill="#FFD54F" />
+          <circle cx="600" cy="400" r="50" fill="#FF7043" />
+          <circle cx="150" cy="600" r="30" fill="#4FC3F7" />
+          <circle cx="700" cy="700" r="70" fill="#81C784" />
+          <circle cx="300" cy="150" r="40" fill="#BA68C8" />
+        </svg>
+      </div>
+
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       />
-      <section className="pb-12 mx-auto md:pb-20 max-w-7xl">
+
+      <section className="relative z-10 pb-12 mx-auto md:pb-20 max-w-7xl">
         <div className="py-4 text-center md:py-8">
           <h4 className="text-base font-bold tracking-wide text-center uppercase text-gray-700">
             THEME OF CONFERENCE
@@ -41,7 +70,6 @@ const Events = () => {
           </motion.p>
         </div>
 
-        {/* Animate the container for the event cards */}
         <motion.div
           className="gap-8 space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
@@ -102,7 +130,6 @@ const Events = () => {
                     ? 'Discussion on various sustainable processes and products.'
                     : 'Great insights on market trends and product development.'}
                 </p>
-                {/* Add floating icons for flair */}
                 <motion.div
                   className="absolute top-2 right-4 text-gray-400"
                   initial={{ opacity: 0, scale: 0.5 }}

@@ -15,7 +15,7 @@ const TourismHomePage = () => {
 
   return (
     <div>
-      <section className="bg-white overflow-hidden">
+      <section className="overflow-hidden">
         <div className="max-w-screen-xl 2xl:max-w-screen-3xl px-8 md:px-12 mx-auto py-6 lg:py-12 space-y-12 flex flex-col justify-center">
           {/* Section Title */}
           <motion.div
