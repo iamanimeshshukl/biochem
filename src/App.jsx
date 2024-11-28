@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header.jsx'; 
+import Header from './components/Header'; 
 import Navbar from './components/Navbar'; 
 import Footer from './components/Footer';
 import AboutUs from './pages/AboutUs';
@@ -17,12 +17,12 @@ import Home from "./pages/Home.jsx"
 
 const App = () => {
   return (
-    <Router>
+<div>
+<Router>
       <Header /> 
-      <br></br>
       <Navbar /> 
       <Routes>
-        <Route path="*" element={<Home />} />
+      <Route path="*" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/abstracts" element={<Abstracts />} />
         <Route path="/publications" element={<Publications />} />
@@ -34,6 +34,7 @@ const App = () => {
       </Routes>
       <Footer /> 
     </Router>
+</div>
   );
 };
 

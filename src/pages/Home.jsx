@@ -7,19 +7,19 @@ import Tourism from '../Components/tourismHomePage'
 import Sponsers from '../Components/Sponsers'
 import Events from '../Components/Events'
 import Person from '../Components/Person'
+import Biometacon from '../Components/Biometacon'
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 min-h-screen">
       <Theme />
-     <Carousel />
-      
+      <Carousel />
+      <br></br> 
+      <Biometacon />
       <br></br><br></br>
-      <Timeline/>
-      <Events />
+      <Timeline />
       <Person />
-      <Tourism/>
-      <br></br>
+      <Tourism />
       <Sponsers />
     </div>
   )
