@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       <Theme />
      <Carousel />
-      <Hero />
+      
       <br></br><br></br>
       <Timeline/>
       <Events />
