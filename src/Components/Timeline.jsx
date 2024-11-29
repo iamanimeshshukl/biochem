@@ -78,19 +78,19 @@ const Timeline = () => {
       <div className="absolute inset-0 z-0" ref={svgBackgroundRef}>
         <svg width="100%" height="100%" className="absolute opacity-20">
           {/* Adding circles as bubbles */}
-          <circle cx="200" cy="300" r="80" fill="#FFD54F" />
-          <circle cx="600" cy="400" r="60" fill="#FF7043" />
-          <circle cx="150" cy="600" r="40" fill="#4FC3F7" />
-          <circle cx="700" cy="700" r="90" fill="#81C784" />
-          <circle cx="300" cy="150" r="50" fill="#BA68C8" />
+          <circle cx="200" cy="300" r="60" fill="#FFD54F" />
+          <circle cx="600" cy="400" r="50" fill="#FF7043" />
+          <circle cx="150" cy="600" r="30" fill="#4FC3F7" />
+          <circle cx="700" cy="700" r="70" fill="#81C784" />
+          <circle cx="300" cy="150" r="40" fill="#BA68C8" />
         </svg>
       </div>
 
-      <div className="relative z-10 text-center mb-8">
-        <h2 className="text-4xl font-extrabold text-gray-900">Event Timeline</h2>
+      <div className="relative z-10 text-center mb-6">
+        <h2 className="text-3xl font-semibold text-gray-900">Event Timeline</h2>
       </div>
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-4 py-8 relative z-10">
         {/* Vertical Line Animation */}
         <div
           ref={lineRef}
@@ -98,67 +98,69 @@ const Timeline = () => {
         ></div>
 
         <div className="relative wrap overflow-hidden">
-          {[{
+          <div className="max-w-2xl mx-auto">
+            {[{
               id: 1,
               title: 'Abstract Submission Start',
-              date: '15/10/2024',
+              date: '1/12/2024',
               alignment: 'right',
             },
             {
               id: 2,
               title: 'Abstract Submission End',
-              date: '30/12/2024',
+              date: '15/01/2025',
               alignment: 'left',
             },
             {
               id: 3,
               title: 'Announcement of Acceptance',
-              date: '05/01/2025',
+              date: '20/01/2025',
               alignment: 'right',
             },
             {
               id: 4,
-              title: 'Last Date of Registration',
+              title: 'Last Date of Online Registration',
               date: '05/02/2025',
               alignment: 'left',
             },
-          ].map((event, index) => (
-            <motion.div
-              key={event.id}
-              className={`mb-12 flex justify-between items-center w-full ${
-                event.alignment === 'right' ? 'right-timeline' : 'left-timeline flex-row-reverse'
-              }`}
-              variants={eventVariants}
-              initial="hidden"
-              whileInView="visible"
-              exit="exit"
-              viewport={{ once: false }}
-              {...hoverEffect}
-            >
-              <div className="order-1 w-5/12"></div>
+            ].map((event, index) => (
               <motion.div
-                className="z-20 flex items-center order-1 bg-gradient-to-r from-blue-600 to-indigo-600 shadow-xl w-16 h-16 rounded-full relative"
-                variants={staggeredVariants}
+                key={event.id}
+                className={`mb-10 flex justify-between items-center w-full ${
+                  event.alignment === 'right' ? 'right-timeline' : 'left-timeline flex-row-reverse'
+                }`}
+                variants={eventVariants}
+                initial="hidden"
+                whileInView="visible"
+                exit="exit"
+                viewport={{ once: false }}
+                {...hoverEffect}
               >
-                <motion.h1 className="mx-auto font-semibold text-lg text-white" variants={childVariants}>
-                  {event.id}
-                </motion.h1>
+                <div className="order-1 w-5/12"></div>
                 <motion.div
-                  className={`absolute ${
-                    event.alignment === 'right' ? 'left-16' : 'right-16'
-                  } top-1/2 w-[120px] h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 opacity-40 z-10`}
+                  className="z-20 flex items-center order-1 bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg w-12 h-12 rounded-full relative"
+                  variants={staggeredVariants}
+                >
+                  <motion.h1 className="mx-auto font-semibold text-md text-white" variants={childVariants}>
+                    {event.id}
+                  </motion.h1>
+                  <motion.div
+                    className={`absolute ${
+                      event.alignment === 'right' ? 'left-12' : 'right-12'
+                    } top-1/2 w-[100px] h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 opacity-40 z-10`}
+                    variants={childVariants}
+                  />
+                </motion.div>
+                <motion.div
+                  className="order-1 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg shadow-lg w-5/12 px-5 py-3 z-20"
                   variants={childVariants}
-                />
+                >
+                  <h3 className="mb-2 font-normal text-lg text-center">{event.title}</h3>
+                  <p className="text-white text-sm leading-tight text-center">{event.date}</p>
+                </motion.div>
               </motion.div>
-              <motion.div
-                className="order-1 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-lg shadow-xl w-5/12 px-6 py-4 z-20"
-                variants={childVariants}
-              >
-                <h3 className="mb-2 font-normal text-xl text-center">{event.title}</h3>
-                <p className="text-white text-normal leading-tight text-center">{event.date}</p>
-              </motion.div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

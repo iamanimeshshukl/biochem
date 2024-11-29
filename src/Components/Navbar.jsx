@@ -1,158 +1,215 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
+import React, { useState } from 'react';
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const topLineRef = useRef(null);
-  const middleLineRef = useRef(null);
-  const bottomLineRef = useRef(null);
+  const [dropdown, setDropdown] = useState(null);
 
-  // GSAP animation for the hamburger icon
-  useEffect(() => {
-    if (menuOpen) {
-      gsap.to(topLineRef.current, { rotate: 45, y: 7, duration: 0.4 });
-      gsap.to(middleLineRef.current, { opacity: 0, duration: 0.2 });
-      gsap.to(bottomLineRef.current, { rotate: -45, y: -7, duration: 0.4 });
-    } else {
-      gsap.to(topLineRef.current, { rotate: 0, y: 0, duration: 0.4 });
-      gsap.to(middleLineRef.current, { opacity: 1, duration: 0.2 });
-      gsap.to(bottomLineRef.current, { rotate: 0, y: 0, duration: 0.4 });
-    }
-  }, [menuOpen]);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  // Framer Motion variants for text links
-  const linkVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.8 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      scale: 1, 
-      transition: { duration: 0.6, ease: 'easeInOut' } 
-    },
-    hover: {
-      scale: 1.2, 
-      rotate: 5, 
-      color: '#FFD700', 
-      transition: { duration: 0.3 }
-    }
-  };
-
-  // Staggering animations for the links (one after another)
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2, // Links will appear with a small delay between them
-      },
-    },
+  const toggleDropdown = (menu) => {
+    setDropdown(dropdown === menu ? null : menu); // Toggle the menu on click
   };
 
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0, y: -100 }} // Navbar sliding from the top
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="relative bg-blue-800"
-      >
-        <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.8, ease: 'backOut' }} // Bounce effect for the icon
-            className="inline-flex items-center space-x-2"
-          >
-            <div className="hidden grow items-start lg:flex">
-              <motion.ul
-                className="ml-12 inline-flex space-x-8"
-                initial="hidden"
-                animate="visible"
-                variants={containerVariants} // Staggered animation
-              >
-                {[
-                  { label: 'Home', href: '/home' },
-                  { label: 'About Us', href: '/about' },
-                  { label: 'Abstracts', href: '/abstracts' },
-                  { label: 'Publications', href: '/publications' },
-                  { label: 'Scientific Programs', href: '/scientific-programs' },
-                  { label: 'Registration & Sponsorship', href: '/registration-sponsorship' },
-                  { label: 'Discover Kanpur', href: '/general-info' },
-                  { label: 'IBS Team', href: '/ibs-team' },
-                  { label: 'Contacts', href: '/contacts' }
-                ].map((link, index) => (
-                  <motion.li
-                    key={index}
-                    initial="hidden"
-                    animate="visible"
-                    variants={linkVariants} // Hover and entrance animations for links
-                    whileHover="hover"
-                  >
-                    <a href={link.href} className="text-sm font-semibold text-white">
-                      {link.label}
-                    </a>
-                  </motion.li>
-                ))}
-              </motion.ul>
-            </div>
-          </motion.div>
+    <div className="relative bg-blue-800 z-50">
+      <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        {/* Navbar Links */}
+        <div className="hidden lg:flex grow items-start">
+          <ul className="ml-12 inline-flex space-x-8">
+            <li>
+              <a href="/home" className="text-base font-semibold text-white">
+                Home
+              </a>
+            </li>
 
-          <div className="lg:hidden">
-            <button onClick={toggleMenu} aria-label="Toggle menu">
-              <motion.div
-                className="space-y-1"
-                whileHover={{ scale: 1.2, rotate: 15 }} // Rotation on hover for hamburger
-                transition={{ duration: 0.4, type: 'spring', stiffness: 200 }}
+            {/* Abstracts Dropdown */}
+            <li className="relative">
+              <button
+                onClick={() => toggleDropdown('abstracts')}
+                className="flex items-center text-base font-semibold text-white"
               >
-                <div ref={topLineRef} className="h-1 w-6 bg-white"></div>
-                <div ref={middleLineRef} className="h-1 w-6 bg-white"></div>
-                <div ref={bottomLineRef} className="h-1 w-6 bg-white"></div>
-              </motion.div>
-            </button>
-          </div>
+                Abstracts
+                <span
+                  className={`ml-2 transform ${dropdown === 'abstracts' ? 'rotate-90' : ''} transition-transform text-xl`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="text-white"
+                  >
+                    <path d="M3 4l3 3 3-3" />
+                  </svg>
+                </span>
+              </button>
+              {dropdown === 'abstracts' && (
+                <ul className="absolute left-0 mt-2 w-48 bg-blue-700 text-white rounded-md shadow-lg transition-opacity duration-200">
+                  {[
+                    { label: 'General', href: '/abstracts' },
+                    {
+                      label: 'Themes',
+                      href: 'https://drive.google.com/file/d/1b43u6fjTBSs9tq27UddLKRH9IssKkcdH/preview',
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                    },
+                    {
+                      label: 'Guidelines',
+                      href: 'https://drive.google.com/file/d/1DYAA29_JL3WkdS_z6C2ScpxqheFTgWsY/preview',
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                    },
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      className={`hover:bg-blue-600 ${idx > 0 ? 'border-t border-blue-600' : ''}`}
+                    >
+                      <a
+                        href={item.href}
+                        target={item.target || '_self'}
+                        rel={item.rel || ''}
+                        className="block px-4 py-2"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+
+            {/* Scientific Programs Dropdown */}
+            <li className="relative">
+              <button
+                onClick={() => toggleDropdown('programs')}
+                className="flex items-center text-base font-semibold text-white"
+              >
+                Scientific Programs
+                <span
+                  className={`ml-2 transform ${dropdown === 'programs' ? 'rotate-90' : ''} transition-transform text-xl`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="text-white"
+                  >
+                    <path d="M3 4l3 3 3-3" />
+                  </svg>
+                </span>
+              </button>
+              {dropdown === 'programs' && (
+                <ul className="absolute left-0 mt-2 w-48 bg-blue-700 text-white rounded-md shadow-lg transition-opacity duration-200">
+                  {[
+                    { label: 'Programs', href: '/scientific-programs' },
+                    { label: 'Speakers', href: '/scientific-programs/speakers' },
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      className={`hover:bg-blue-600 ${idx > 0 ? 'border-t border-blue-600' : ''}`}
+                    >
+                      <a href={item.href} className="block px-4 py-2">
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+
+            {/* Registration Dropdown */}
+            <li className="relative">
+              <button
+                onClick={() => toggleDropdown('registration')}
+                className="flex items-center text-base font-semibold text-white"
+              >
+                Registration
+                <span
+                  className={`ml-2 transform ${dropdown === 'registration' ? 'rotate-90' : ''} transition-transform text-xl`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="text-white"
+                  >
+                    <path d="M3 4l3 3 3-3" />
+                  </svg>
+                </span>
+              </button>
+              {dropdown === 'registration' && (
+                <ul className="absolute left-0 mt-2 w-48 bg-blue-700 text-white rounded-md shadow-lg transition-opacity duration-200">
+                  {[
+                    { label: 'Register', href: '/registration' },
+                    { label: 'Sponsorship', href: '/registration-sponsorship' },
+                    {
+                      label: 'Fee Payment',
+                      href: 'https://drive.google.com/file/d/1zfCr59gkkOmJUm4zPJfBYzG_A16Np6-U/preview',
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                    },
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      className={`hover:bg-blue-600 ${idx > 0 ? 'border-t border-blue-600' : ''}`}
+                    >
+                      <a
+                        href={item.href}
+                        target={item.target || '_self'}
+                        rel={item.rel || ''}
+                        className="block px-4 py-2"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+
+            {/* Other Links */}
+            <li>
+              <a href="/discover" className="text-base font-semibold text-white">
+                Discover Kanpur
+              </a>
+            </li>
+            <li>
+              <a href="/ibs-team" className="text-base font-semibold text-white">
+                Bio-Metacon Team
+              </a>
+            </li>
+            <li>
+              <a href="/contacts" className="text-base font-semibold text-white">
+                Contacts
+              </a>
+            </li>
+            <li>
+              <a href="/about" className="text-base font-semibold text-white">
+                About Us
+              </a>
+            </li>
+          </ul>
         </div>
 
-        {/* Mobile Menu with Framer Motion and bounce effect */}
-        <motion.div
-          className="lg:hidden bg-blue-700"
-          initial={{ height: 0 }}
-          animate={{ height: menuOpen ? 'auto' : 0 }}
-          transition={{ duration: 0.5, ease: 'easeInOut' }}
-          style={{ overflow: 'hidden' }}
-        >
-          <ul className="px-4 py-4 space-y-4">
-            {[
-              { label: 'Home', href: '/home' },
-              { label: 'About Us', href: '/about' },
-              { label: 'Abstracts', href: '/abstracts' },
-              { label: 'Publications', href: '/publications' },
-              { label: 'Scientific Programs', href: '/scientific-programs' },
-              { label: 'Registration & Sponsorship', href: '/registration-sponsorship' },
-              { label: 'Discover Kanpur', href: '/general-info' },
-              { label: 'IBS Team', href: '/ibs-team' },
-              { label: 'Contacts', href: '/contacts' }
-            ].map((link, index) => (
-              <motion.li
-                key={index}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
-                whileHover={{ scale: 1.1, color: '#FFD700', transition: { duration: 0.3 } }}
-              >
-                <a href={link.href} className="text-sm font-semibold text-white">
-                  {link.label}
-                </a>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-      </motion.div>
-    </>
+        {/* Mobile Menu */}
+        <div className="lg:hidden">
+          <button
+            onClick={() => toggleDropdown('mobile-menu')}
+            className="text-white"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 

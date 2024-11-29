@@ -3,8 +3,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 
 // Manually importing images
-import image1 from '../assets/1.png';
-import image2 from '../assets/2.png';
+import image1 from '../assets/1.jpg';
+import image2 from '../assets/2.jpg';
 import image3 from '../assets/3.png';
 
 // Array of image objects

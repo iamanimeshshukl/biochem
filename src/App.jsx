@@ -12,7 +12,8 @@ import GeneralInfo from './pages/GeneralInfo';
 import IBSTeam from './pages/IBSTeam';
 import Contacts from './pages/Contacts';
 import Home from "./pages/Home.jsx"
-
+import Theme from "./Components/Theme.jsx"
+import Discover from "./pages/Discover.jsx"
 
 
 const App = () => {
@@ -20,17 +21,19 @@ const App = () => {
 <div>
 <Router>
       <Header /> 
+      <Theme />
       <Navbar /> 
       <Routes>
       <Route path="*" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/abstracts" element={<Abstracts />} />
-        <Route path="/publications" element={<Publications />} />
+        <Route path="/discover" element={<Discover />} />
         <Route path="/scientific-programs" element={<ScientificPrograms />} />
         <Route path="/registration-sponsorship" element={<RegistrationSponsorship />} />
         <Route path="/general-info" element={<GeneralInfo />} />
         <Route path="/ibs-team" element={<IBSTeam />} />
         <Route path="/contacts" element={<Contacts />} />
+        
       </Routes>
       <Footer /> 
     </Router>
