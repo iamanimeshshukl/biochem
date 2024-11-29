@@ -1,16 +1,22 @@
 import React from 'react'
-import logo2 from "../assets/BIO-METACON_Logo-removebg-preview.png"
+import logo2 from "../assets/BIO-METACON Logo.png"
 import Countdown from "../Components/ui/Countdown"
 
 const Footer = () => {
   return (
     <div>
-      <div className="mt-8 bg-gradient-to-r from-gray-900 via-blue-gray-800 to-blue-900 pt-9">
+      <div className="mt-8 bg-gradient-to-r from-gray-800 via-blue-gray-800 to-blue-900 pt-9">
   <div className="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
     <div className="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
       <div className="md:w-[316px]">
        
-      <img src={logo2} className='w-[200px] h-[200px]'/>
+      <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
+  <img src={logo2} className="w-full h-full object-cover transform scale-110 translate-y-2 translate-x-0.5" />
+</div>
+
+
+
+
       
       </div>
       <div className="md:w-[316px]">
