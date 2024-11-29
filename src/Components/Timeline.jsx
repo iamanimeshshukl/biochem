@@ -101,24 +101,24 @@ const Timeline = () => {
           {[{
               id: 1,
               title: 'Abstract Submission Start',
-              date: '15/10/2024',
+              date: '1/12/2024',
               alignment: 'right',
             },
             {
               id: 2,
               title: 'Abstract Submission End',
-              date: '30/12/2024',
+              date: '15/01/2025',
               alignment: 'left',
             },
             {
               id: 3,
               title: 'Announcement of Acceptance',
-              date: '05/01/2025',
+              date: '20/01/2025',
               alignment: 'right',
             },
             {
               id: 4,
-              title: 'Last Date of Registration',
+              title: 'Last Date of Online Registration',
               date: '05/02/2025',
               alignment: 'left',
             },

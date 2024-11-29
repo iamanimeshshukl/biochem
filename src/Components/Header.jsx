@@ -10,31 +10,40 @@ const Header = () => {
         
         {/* Left logo with subtle scaling and glow effect */}
         <motion.img
-          src={logo2}
-          className="h-[150px] md:h-24 mb-4 md:mb-0 cursor-pointer filter brightness-150"
-          alt="BIO-METACON Logo"
-          whileHover={{ scale: 1.1, rotate: 10, filter: "brightness(1.3)" }}
-          transition={{ duration: 0.3 }}
-        />
+    src={logo2}
+    className="h-[20vh] md:h-24 lg:h-32 mb-4 md:mb-0 cursor-pointer filter brightness-150"
+    alt="BIO-METACON Logo"
+    whileHover={{
+      scale: 1.1,
+      rotate: 10,
+      filter: "brightness(1.3)",
+    }}
+    transition={{ duration: 0.3 }}
+  />
         
         {/* Title with elegant scale and fade effect */}
         <motion.h1
-          className="text-center text-3xl md:text-5xl font-extrabold text-white"
+          className="text-center text-5xl md:text-5xl font-extrabold text-white"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          International Conference <br /> BIO-METACON 2025
+          <span className='text-3xl'>International Conference</span> <br /> Bio-Metacon 2025
+          < br /> <span className='text-xl'>Advances in Biorefineries: Opportunity and Challenges</span>
         </motion.h1>
 
         {/* Right logo with hover scaling and rotation */}
         <motion.img
-          src={hbtu}
-          className="h-[150px] md:h-24 mt-4 md:mt-0 cursor-pointer filter brightness-150"
-          alt="HBTU Logo"
-          whileHover={{ scale: 1.1, rotate: -10, filter: "brightness(1.3)" }}
-          transition={{ duration: 0.3 }}
-        />
+    src={hbtu}
+    className="h-[20vh] md:h-24 lg:h-32 mb-4 md:mb-0 cursor-pointer filter brightness-150"
+    alt="BIO-METACON Logo"
+    whileHover={{
+      scale: 1.1,
+      rotate: 10,
+      filter: "brightness(1.3)",
+    }}
+    transition={{ duration: 0.3 }}
+  />
       </div>
 
       {/* Conference details with elegant slide and fade animation */}
@@ -43,10 +52,16 @@ const Header = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.5 }}
-      >
-        <p className="bg-purple-500 bg-opacity-90 py-4 px-6 md:px-10 rounded-full shadow-lg inline-block text-white">
-          March 1st-3rd, 2025, Harcourt Butler Technical University (HBTU), Kanpur, India
-        </p>
+      > <p className="bg-purple-500 bg-opacity-90 py-4 px-6 md:px-10 rounded-full shadow-lg inline-block text-white">
+      March 29th-31st 2025 , Harcourt Butler Technical University (HBTU) Kanpur 208002, India
+    </p>  <br></br>
+    <p className="py-2 px-6 md:px-10 rounded-full inline-block text-white">Organised by</p>
+    <br></br>
+    <p className="py-2 px-6 md:px-10 rounded-full inline-block text-white">Department of Biochemical Engineering, School of Chemical Technology</p>
+    <br></br>
+              <p className="py-2 px-6 md:px-10 rounded-full inline-block text-white"> Harcourt Butler Technical University (HBTU), Kanpur, India</p>
+             
+        
       </motion.div>
 
       {/* Floating decorative elements */}

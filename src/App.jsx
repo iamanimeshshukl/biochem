@@ -12,7 +12,7 @@ import GeneralInfo from './pages/GeneralInfo';
 import IBSTeam from './pages/IBSTeam';
 import Contacts from './pages/Contacts';
 import Home from "./pages/Home.jsx"
-
+import Theme from "./Components/Theme.jsx"
 
 
 const App = () => {
@@ -20,6 +20,7 @@ const App = () => {
 <div>
 <Router>
       <Header /> 
+      <Theme />
       <Navbar /> 
       <Routes>
       <Route path="*" element={<Home />} />

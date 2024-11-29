@@ -34,7 +34,7 @@ const Footer = () => {
               href="tel:+911800123444"
               className="font-Inter text-[14px] font-medium text-white"
             >
-              +91 1800123444
+              +91 9450941787 , +91 7577082588
             </a>
             <p className="font-Inter text-[12px] font-medium text-white">
               Support Number
