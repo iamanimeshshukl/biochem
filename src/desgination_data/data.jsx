@@ -17,7 +17,7 @@ const committeeData = [
       },
       {
         name: "Prof. G.L. Devnani, Dean, SOCT, HBTU Kanpur",
-        img: "path-to-image/prof-devnani.jpg", // Replace with the actual image path
+        img: "src/assets/committee_data/GL devnani.jpg", // Replace with the actual image path
       },
     ],
   },
@@ -69,7 +69,7 @@ const committeeData = [
       },
       {
         name: "Dr. Mamta Kumari, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur",
-        img: "path-to-image/dr-mamta.jpg", // Replace with the actual image path
+        img: "src/assets/committee_data/Mamta Kumari.jpg", // Replace with the actual image path
       },
       {
         name: "Mr. Ashish Kumar Gupta, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur",
@@ -77,7 +77,7 @@ const committeeData = [
       },
       {
         name: "Mr. Mohit Kumar Yadav, Guest Faculty, Biochemical Engg., HBTU Kanpur",
-        img: "path-to-image/mr-mohit.jpg", // Replace with the actual image path
+        img: "src/assets/committee_data/Mohit yadav.jpg", // Replace with the actual image path
       },
     ],
   },
