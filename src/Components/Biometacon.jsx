@@ -52,14 +52,14 @@ const Biometacon = () => {
         transition={{ duration: 0.5 }}
       >
         <h1 className="text-3xl md:text-4xl font-extrabold leading-tight">
-          Welcome to <span className="text-indigo-600">BIO-METACON 2025</span>
+          Welcome to <span className="text-orange-600">BIO-METACON 2025</span>
         </h1>
         <p className="mt-6 text-base md:text-lg leading-relaxed text-justify">
           The Department of Biochemical Engineering, HBTU Kanpur, proudly presents <span className="font-bold">BIO-METACON 2025</span>, 
-          a premier international conference centered around the theme <span className="text-indigo-500">"Advances in Biorefineries: Opportunity and Challenges"</span>
+          a premier international conference centered around the theme <span className="text-orange-500">"Advances in Biorefineries: Opportunity and Challenges"</span>
         </p>
         <p className="mt-4 text-sm md:text-base text-gray-600 text-justify">
-          Scheduled for <span className="font-semibold text-indigo-500">29th-31st March 2025</span>, this event will bring together industry leaders and academic pioneers to address pressing global challenges.
+          Scheduled for <span className="font-semibold text-orange-500">29th-31st March 2025</span>, this event will bring together industry leaders and academic pioneers to address pressing global challenges.
         </p>
         <p className="mt-4 text-sm md:text-base text-gray-600 text-justify">
           Join us at <span className="font-semibold">HBTU Kanpur</span> to engage with thought leaders, share groundbreaking research, and contribute to shaping the future of bioengineering.

@@ -5,7 +5,7 @@ import hbtu from '../assets/hbtu logo.png';
 
 const Header = () => {
   return (
-    <header className="w-full bg-gradient-to-r from-blue-200 to-blue-400 py-6 relative overflow-hidden">
+    <header className="w-full bg-gradient-to-r from-blue-900 to-blue-700 py-6 relative overflow-hidden">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6 md:px-10">
         
         {/* Left logo with subtle scaling and glow effect */}
@@ -53,8 +53,12 @@ const Header = () => {
         animate={{ opacity: 1, y: -5 }}
         transition={{ duration: 0.7, delay: 0.5 }}
       >
-        <p className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-opacity-90 py-2 px-4 md:px-6 rounded-full shadow-lg inline-block text-white text-xs md:text-sm font-bold">
-          Harcourt Butler Technical University, Kanpur 208002, India
+        <p className="bg-gradient-to-r from-orange-500 via-orange-500 to-orange-600 bg-opacity-90 py-2 px-4 md:px-6 rounded-full shadow-lg inline-block text-white text-xs md:text-sm font-bold">
+          <span>Organized By Department Of Bio-Chemical Engineering,</span>
+          <br></br>
+          Harcourt Butler Technical University, Kanpur Uttar Pradesh,India, 208002
+          <br></br>
+          <span>29-31 March 2025</span>
         </p>
       </motion.div>
 

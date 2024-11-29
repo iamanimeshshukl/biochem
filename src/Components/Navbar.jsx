@@ -59,6 +59,19 @@ const Navbar = () => {
                       target: '_blank',
                       rel: 'noopener noreferrer',
                     },
+                    {
+                      label: 'Abstract Template',
+                      href: 'https://drive.google.com/file/d/1yoOSgmE6C8BbMTugDZOGd0yp9KxCOgHD/preview',
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                    },
+                    {
+                      label: 'Poster Template',
+                      href: 'https://drive.google.com/file/d/1QKDXXnD7naDVoSl9pRBdwDu98TZE6Und/preview',
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                    },
+
                   ].map((item, idx) => (
                     <li
                       key={idx}
