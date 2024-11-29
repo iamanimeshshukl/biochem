@@ -4,7 +4,7 @@ const committeeData = [
     members: [
       {
         name: "Prof. Samsher, Hon'ble Vice Chancellor, HBTU Kanpur",
-        img: "src/assets/committee_data/Brajesh-Singh.png", // Replace with the actual image path
+        img: "src/assets/committee_data/Samsher.png", // Replace with the actual image path
       },
     ],
   },
