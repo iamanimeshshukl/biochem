@@ -102,7 +102,7 @@ const Card = () => {
                   transition={{ duration: 0.6 }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="absolute -mt-16 w-full flex justify-center">
+                  <div className=" mt-20 w-full flex justify-center">
                     <div className="h-36 w-36 border-4 border-white rounded-full overflow-hidden shadow-md">
                       <motion.img
                         src={member.img}
