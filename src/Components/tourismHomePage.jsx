@@ -24,7 +24,7 @@ const TourismHomePage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800">
+            <h2 className="text-3xl my-4 md:text-4xl font-extrabold text-gray-800">
               Places To Visit Nearby Kanpur
             </h2>
             <p className="mt-4 text-md md:text-lg text-gray-500">
