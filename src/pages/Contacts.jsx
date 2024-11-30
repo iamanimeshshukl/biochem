@@ -3,9 +3,21 @@ import { motion } from 'framer-motion';
 
 const Contacts = () => {
   return (
-    <div className="container mx-auto py-10 relative perspective-1000">
+    <div className="container mx-auto py-10 relative perspective-1000"
+    style={{
+      backgroundImage: "url('src/assets/bg.png')",
+      backgroundSize: "cover", // Ensures the image scales proportionally to cover the area
+      backgroundRepeat: "no-repeat", // Prevents tiling of the image
+      backgroundPosition: "center center", // Centers the image both horizontally and vertically
+      backgroundAttachment: "fixed", // Keeps the image fixed during scroll (optional)
+      minHeight: "100vh", // Ensures the background covers the full viewport height
+      display: "flex", // Optional: Enables flexbox for better layout control
+      flexDirection: "column", // Optional: Arranges children vertically
+      alignItems: "center", // Optional: Centers children horizontally
+      justifyContent: "center", // Optional: Centers children vertically
+    }}>
       {/* Contact Section */}
-      <section className="dark:bg-slate-800 p-8 rounded-lg shadow-xl" id="contact">
+      <section className="dark:bg-slate-800 p-8 rounded-lg " id="contact">
         <motion.div
           initial={{ opacity: 0, scale: 0.9, rotateX: -10 }}
           animate={{ opacity: 1, scale: 1, rotateX: 0 }}
