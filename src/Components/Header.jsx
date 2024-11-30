@@ -1,6 +1,6 @@
 import React from 'react';
-import headerbg from "src/assets/headerbg.png"
-import mobileheader from "src/assets/mobileheader.png"
+import headerbg from "../assets/headerbg.png"
+import mobileheader from "../assets/mobileheader.png"
 const Header = () => {
   return (
     <div className='w-full'>

@@ -15,7 +15,7 @@ const Biometacon = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden h-[50vh] m-4 flex items-center justify-center text-center  from-indigo-50 via-purple-50 to-pink-50">
+    <div className="relative overflow-hidden h-[70vh] m-4 flex items-center justify-center text-center  from-indigo-50 via-purple-50 to-pink-50">
       {/* Content Section */}
       <motion.div
         className="relative z-10 max-w-4xl mx-4 p-4 md:p-8 rounded-lg bg-white bg-opacity-90 shadow-2xl text-gray-800"
