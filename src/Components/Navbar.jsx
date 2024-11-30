@@ -19,6 +19,13 @@ const Navbar = () => {
               </a>
             </li>
 
+            
+            <li>
+              <a href="/about" className="text-base font-semibold text-white">
+                About Us
+              </a>
+            </li>
+
             {/* Abstracts Dropdown */}
             <li className="relative">
               <button
@@ -71,6 +78,13 @@ const Navbar = () => {
                       target: '_blank',
                       rel: 'noopener noreferrer',
                     },
+                    {
+                      label: 'PPT Template',
+                      href: 'https://drive.google.com/file/d/1IraSUm3aP-8BDuCrMhgvusGtQ3vgM7aX/preview',
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                    },
+
 
                   ].map((item, idx) => (
                     <li
@@ -165,7 +179,7 @@ const Navbar = () => {
                     { label: 'Sponsorship', href: '/registration-sponsorship' },
                     {
                       label: 'Fee Payment',
-                      href: 'https://drive.google.com/file/d/1zfCr59gkkOmJUm4zPJfBYzG_A16Np6-U/preview',
+                      href: 'https://drive.google.com/file/d/1nK-3m8jbaTCKNtsCQ2I6s6kAhQW8HhAs/preview',
                       target: '_blank',
                       rel: 'noopener noreferrer',
                     },
@@ -204,11 +218,7 @@ const Navbar = () => {
                 Contacts
               </a>
             </li>
-            <li>
-              <a href="/about" className="text-base font-semibold text-white">
-                About Us
-              </a>
-            </li>
+            
           </ul>
         </div>
 

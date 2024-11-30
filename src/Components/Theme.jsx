@@ -3,7 +3,7 @@ import { motion } from "framer-motion"; // Import Framer Motion
 
 const MarqueeNews = () => {
   const newsItems = [
-    "Welcome to the Happiest City in the India",
+    "Welcome to the one of the Happiest City in the World",
     "International Conference BIO-METACON 2025",
     "March 29th-31st, 2025, Harcourt Butler Technical University (HBTU), Kanpur, India",
     "Abstract Submission Start 01/12/2024.",

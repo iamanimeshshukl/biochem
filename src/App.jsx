@@ -18,7 +18,9 @@ import Discover from "./pages/Discover.jsx"
 
 const App = () => {
   return (
-<div>
+<div
+
+>
 <Router>
       <Header /> 
       <Theme />
