@@ -89,9 +89,6 @@ const Price = () => {
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
             Pricing Plans
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            Choose a plan that best suits your data needs.
-          </p>
         </div>
 
         {/* Cards */}

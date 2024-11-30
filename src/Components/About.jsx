@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { gsap } from 'gsap';
 import col from "../assets/hbtucollege.png";
 import lab from "../assets/biochemLab.png";
-import conference from "../assets/aboutConference.png";
+import conference from "../assets/bio.jpg";
 
 const About = () => {
   const sectionRefs = useRef([]);
@@ -41,10 +41,11 @@ const About = () => {
                 About The University 
               </motion.h2>
               <motion.p
-                className="mt-4 text-gray-600 text-lg"
+                className="mt-4 text-gray-600 text-lg text-justify"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
+                
               >
             Harcourt Butler Technical University, Kanpur (Formerly HBTI, Kanpur) was established in 1921 and has a glorious history and has always been at the forefront of technological developments and the growth of industries in the country since its inception. The Institute began as the Government Technological Institute, Uttar Pradesh in 1921. The Institute was renamed Harcourt Butler Technological Institute in 1926 in honor of the name of Sir Spencer Harcourt Butler, the then Governor of U.P. Degree courses in Oil Technology were started in 1921, and Chemical Engineering was started in 1954 and after that number of undergraduate and post graduate courses were started. On March 26, 1965, it was upgraded from a Government Department status to an Autonomous Institution. It was upgraded to Harcourt Butler Technical University, Kanpur on September 01, 2016, by Govt. of UP. The University spreads across two campuses - East Campus (77 acres) and West Campus (271 acres) situated approximately 3 kilometers apart. The University provides a congenial environment for the holistic growth and all-round development of the students.
               </motion.p>
@@ -81,7 +82,7 @@ const About = () => {
       >
         <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            <div className="max-w-lg">
+            <div className="max-w-lg" >
               <motion.h2
                 className="text-3xl font-extrabold text-gray-900 sm:text-4xl"
                 initial={{ opacity: 0, y: -20 }}
@@ -91,7 +92,7 @@ const About = () => {
                 ABOUT THE DEPARTMENT
               </motion.h2>
               <motion.p
-                className="mt-4 text-gray-600 text-lg"
+                className="mt-4 text-gray-600 text-lg text-justify"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
@@ -141,7 +142,7 @@ const About = () => {
                 ABOUT THE CONFERENCE
               </motion.h2>
               <motion.p
-                className="mt-4 text-gray-600 text-lg"
+                className="mt-4 text-gray-600 text-lg text-justify"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}

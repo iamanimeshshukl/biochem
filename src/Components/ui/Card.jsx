@@ -103,18 +103,24 @@ const Card = () => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className=" mt-20 w-full flex justify-center">
-                    <div className="h-36 w-36 border-4 border-white rounded-full overflow-hidden shadow-md">
+                    <div className="h-36 w-36 border-4 border-black rounded-full overflow-hidden shadow-md">
                       <motion.img
                         src={member.img}
-                        className="object-cover h-full w-full"
+                        className="object-cover h-[126%] w-full"
                         alt={member.name}
-                        whileHover={{ scale: 1.1, rotate: 360 }}
+                        whileHover={{ scale: 1.1 }}
                         transition={{ duration: 1 }}
                       />
                     </div>
                   </div>
 
-                  <div className="px-6 mt-20 pb-6">
+                  <div className='m-3'>
+                    <p className="text-white text-sm text-center italic w-1/2 border-2 bg-cyan-400 rounded-[20px] mx-auto mt-[15px] p-2">
+                      {section.title}
+                    </p>
+                  </div>
+
+                  <div className="px-6 mt-8 pb-6">
                     <motion.h1
                       className="font-semibold text-xl sm:text-2xl text-center mb-2 text-gray-900"
                       initial={{ scale: 0.8 }}
@@ -125,13 +131,8 @@ const Card = () => {
                       {member.name}
                     </motion.h1>
 
-                    <p className="text-gray-600 text-sm text-center italic">
-                      {section.title}
-                    </p>
 
-                    <p className="text-center text-gray-500 text-base pt-4 font-light">
-                      {`Working with ${member.name.split(' ')[0]} has been an absolute pleasure. Their dedication and attention to detail are unmatched.`}
-                    </p>
+
                   </div>
                 </motion.div>
               );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
   // Set the target date (you can modify this to any future date)
-  const targetDate = new Date('2025-03-01T00:00:00').getTime();
+  const targetDate = new Date('2025-03-29T00:00:00').getTime();
 
   // Initialize state to keep track of time remaining
   const [timeLeft, setTimeLeft] = useState(targetDate - Date.now());

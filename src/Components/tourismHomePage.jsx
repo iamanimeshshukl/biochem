@@ -25,7 +25,7 @@ const TourismHomePage = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800">
-              Places To Visit In Kanpur
+              Places To Visit Nearby Kanpur
             </h2>
             <p className="mt-4 text-md md:text-lg text-gray-500">
               Explore the best spots to visit in Kanpur during the conference.
