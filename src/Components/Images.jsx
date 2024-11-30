@@ -91,7 +91,8 @@ const imageData = [
 const Images = () => {
   return (
     <div>
-      <h2 className="text-5xl pu-3 pb-4 flex justify-center font-extrabold text-blue-900">Famous Places To Visit </h2>
+      <br></br>
+      <h2 className="text-4xl pu-3 pb-4 flex justify-center font-medium text-black">Famous Places To Visit </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         {imageData.map((image, index) => (
           <div key={index} className="group cursor-pointer relative">

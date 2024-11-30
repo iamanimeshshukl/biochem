@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
   <img src={logo2} className="w-full h-full object-cover transform scale-110 translate-y-2 translate-x-0.5" />
 </div>
-
+<br></br>
 <div class="flex items-center gap-4">
   <div class="social-button">
     <button class="relative w-12 h-12 rounded-full group">
