@@ -203,7 +203,7 @@ const Navbar = () => {
             {/* Other Links */}
             <li>
               <a href="/discover" className="text-base font-semibold text-white">
-                Discover Kanpur
+                Discover Nearby
               </a>
             </li>
             <li>
