@@ -1,15 +1,22 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Import Framer Motion for animations
-import logo2 from "../assets/BIO-METACON_Logo-removebg-preview.png";
-import hbtu from '../assets/hbtu logo.png';
-import { div } from 'framer-motion/client';
 
 const Header = () => {
   return (
-   <div className=''>
-         <img className='h-[36vh] lg:h-[55vh] w-full' src="src\assets\headerbg.png" alt="" />
-   </div>
-  );git
+    <div className='w-full'>
+      {/* Desktop Image */}
+      <img 
+        className='hidden md:block h-[40%] w-full object-contain' 
+        src="src/assets/headerbg.png" 
+        alt="Header Background for Desktop" 
+      />
+      {/* Mobile Image */}
+      <img 
+        className='block md:hidden h-auto w-full object-contain' 
+        src="src/assets/mobileheader.png" 
+        alt="Header Background for Mobile" 
+      />
+    </div>
+  );
 };
 
 export default Header;
