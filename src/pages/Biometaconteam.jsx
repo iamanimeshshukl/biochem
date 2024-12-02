@@ -1,7 +1,8 @@
 import React from 'react';
 import Person from '../Components/Person';
+import Biometacon from '../Components/Biometacon';
 
-const IBSTeam = () => {
+const Biometaconteam = () => {
   return (
     <div className="container mx-auto py-10"
     style={{
@@ -25,4 +26,4 @@ const IBSTeam = () => {
   );
 };
 
-export default IBSTeam;
+export default Biometaconteam;
