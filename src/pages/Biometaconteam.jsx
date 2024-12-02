@@ -1,12 +1,12 @@
 import React from 'react';
 import Person from '../Components/Person';
 import Biometacon from '../Components/Biometacon';
-
+import bg from "../assets/bg.png";
 const Biometaconteam = () => {
   return (
     <div className="container mx-auto py-10"
     style={{
-      backgroundImage: "url('src/assets/bg.png')",
+      backgroundImage: `url(${bg})`,
       backgroundSize: "cover", // Ensures the image scales proportionally to cover the area
       backgroundRepeat: "no-repeat", // Prevents tiling of the image
       backgroundPosition: "center center", // Centers the image both horizontally and vertically
