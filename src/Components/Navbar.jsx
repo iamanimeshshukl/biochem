@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative bg-blue-800 z-50">
+    <div className="sticky top-0 bg-blue-800 z-50">
       <div className="mx-auto flex max-w-8xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         {/* Navbar Links for Desktop */}
         <div className="hidden lg:flex grow items-start">
