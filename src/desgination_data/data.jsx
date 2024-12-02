@@ -31,7 +31,7 @@ const committeeData = [
     ],
   },
   {
-    title: "Patrons",
+    title: "Patron",
     members: [
       {
         name: "Prof. Dipteek Parmar, Pro-VC, HBTU Kanpur",
@@ -44,7 +44,7 @@ const committeeData = [
     ],
   },
   {
-    title: "Chairpersons",
+    title: "Chairperson",
     members: [
       {
         name: "Prof. Lalit Kumar Singh, HoD Biochemical Engg., HBTU Kanpur",
@@ -66,7 +66,7 @@ const committeeData = [
     ],
   },
   {
-    title: "Conveners",
+    title: "Convener",
     members: [
       {
         name: "Dr. Shravan Kumar, Assistant Professor, Biochemical Engg., HBTU Kanpur",
@@ -79,7 +79,7 @@ const committeeData = [
     ],
   },
   {
-    title: "Coordinators",
+    title: "Coordinator",
     members: [
       {
         name: "Ms. Roma Agrahari, Assistant Professor, Biochemical Engg., HBTU Kanpur",
@@ -126,10 +126,7 @@ const committeeData = [
         name: "Prof. Praveen Ku. Yadav, HoD Oil Tech., HBTU Kanpur",
         img: PraveenYadavImg,
       },
-      {
-        name: "Mr. Sumant Chatterjee, HoD Leather Tech., HBTU Kanpur",
-        img: SumantChatterjeeImg,
-      },
+     
     ],
   },
 ];
