@@ -232,7 +232,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenu && (
-        <div className="lg:hidden absolute top-0 left-0 w-full h-[55vh] bg-blue-800 z-50 flex flex-col space-y-4 pt-16 px-4">
+        <div className="lg:hidden absolute top-0 left-0 w-full h-[55vh] bg-custom-blue z-50 flex flex-col space-y-4 pt-16 px-4">
           <div className="flex justify-end mb-4">
             <button
               onClick={toggleMobileMenu}

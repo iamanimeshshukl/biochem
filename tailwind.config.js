@@ -15,6 +15,9 @@ export default {
           '100%': { transform: 'translateX(-100%)' },
         },
       },
+      colors: {
+        'custom-blue': 'rgba(30, 58, 138, 0.8)', // Replace with your RGBA value
+    },
     },
     
   },
