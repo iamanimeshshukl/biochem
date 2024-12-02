@@ -18,115 +18,113 @@ import IndiraNigamImg from '../assets/committee_data/Indra Nigam.jpg';
 import VivekKumarImg from '../assets/committee_data/Vivek Kumar.jpg';
 import PraveenYadavImg from '../assets/committee_data/Praveen Kumar Singh Yadav.jpg';
 
-
 // Committee data array
 const committeeData = [
   {
-    title: "Chief Patron",
+    title: 'Chief Patron',
     members: [
       {
-        name: "Prof. Samsher, Hon'ble Vice Chancellor, HBTU Kanpur",
+        name: 'Prof. Samsher, Hon’ble Vice Chancellor, HBTU Kanpur',
         img: SamsherImg,
       },
     ],
   },
   {
-    title: "Patron",
+    title: 'Patron',
     members: [
       {
-        name: "Prof. Dipteek Parmar, Pro-VC, HBTU Kanpur",
+        name: 'Prof. Dipteek Parmar, Pro-VC, HBTU Kanpur',
         img: DipteekImg,
       },
       {
-        name: "Prof. G.L. Devnani, Dean, SOCT, HBTU Kanpur",
+        name: 'Prof. G.L. Devnani, Dean, SOCT, HBTU Kanpur',
         img: DevnaniImg,
       },
     ],
   },
   {
-    title: "Chairperson",
+    title: 'Chairperson',
     members: [
       {
-        name: "Prof. Lalit Kumar Singh, HoD Biochemical Engg., HBTU Kanpur",
+        name: 'Prof. Lalit Kumar Singh, HoD Biochemical Engg., HBTU Kanpur',
         img: LalitImg,
       },
     ],
   },
   {
-    title: "Organising Secretary",
+    title: 'Organising Secretary',
     members: [
       {
-        name: "Prof. Ajay Kumar Singh, Biochemical Engg., HBTU Kanpur",
+        name: 'Prof. Ajay Kumar Singh, Biochemical Engg., HBTU Kanpur',
         img: AjayImg,
       },
       {
-        name: "Shri Brajesh Singh, Biochemical Engg., HBTU Kanpur",
+        name: 'Shri Brajesh Singh, Biochemical Engg., HBTU Kanpur',
         img: BrajeshImg,
       },
     ],
   },
   {
-    title: "Convener",
+    title: 'Convener',
     members: [
       {
-        name: "Dr. Shravan Kumar, Assistant Professor, Biochemical Engg., HBTU Kanpur",
+        name: 'Dr. Shravan Kumar, Assistant Professor, Biochemical Engg., HBTU Kanpur',
         img: ShravanImg,
       },
       {
-        name: "Dr. Rajkamal Kushwaha, Assistant Professor, Biochemical Engg., HBTU Kanpur",
+        name: 'Dr. Rajkamal Kushwaha, Assistant Professor, Biochemical Engg., HBTU Kanpur',
         img: RajkamalImg,
       },
     ],
   },
   {
-    title: "Coordinator",
+    title: 'Coordinators',
     members: [
       {
-        name: "Ms. Roma Agrahari, Assistant Professor, Biochemical Engg., HBTU Kanpur",
+        name: 'Ms. Roma Agrahari, Assistant Professor, Biochemical Engg., HBTU Kanpur',
         img: RomaImg,
       },
       {
-        name: "Ms. Priyanka Mishra, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur",
+        name: 'Ms. Priyanka Mishra, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur',
         img: PriyankaImg,
       },
       {
-        name: "Dr. Mamta Kumari, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur",
+        name: 'Dr. Mamta Kumari, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur',
         img: MamtaImg,
       },
       {
-        name: "Mr. Ashish Kumar Gupta, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur",
+        name: 'Mr. Ashish Kumar Gupta, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur',
         img: AshishImg,
       },
       {
-        name: "Mr. Mohit Kumar Yadav, Guest Faculty, Biochemical Engg., HBTU Kanpur",
+        name: 'Mr. Mohit Kumar Yadav, Guest Faculty, Biochemical Engg., HBTU Kanpur',
         img: MohitImg,
       },
     ],
   },
   {
-    title: "Local Advisory Committee",
+    title: 'Local Advisory Committee',
     members: [
       {
-        name: "Prof. Ashish Kapoor, HoD Chemical Engg., HBTU Kanpur",
+        name: 'Prof. Ashish Kapoor, HoD Chemical Engg., HBTU Kanpur',
         img: AshishKapoorImg,
       },
       {
-        name: "Prof. Arun Maithani, HoD Paint Tech., HBTU Kanpur",
+        name: 'Prof. Arun Maithani, HoD Paint Tech., HBTU Kanpur',
         img: ArunMaithaniImg,
       },
       {
-        name: "Prof. Indira Nigam, HoD Plastic Tech., HBTU Kanpur",
+        name: 'Prof. Indira Nigam, HoD Plastic Tech., HBTU Kanpur',
         img: IndiraNigamImg,
       },
       {
-        name: "Prof. Vivek Kumar, HoD Food Tech., HBTU Kanpur",
+        name: 'Prof. Vivek Kumar, HoD Food Tech., HBTU Kanpur',
         img: VivekKumarImg,
       },
       {
-        name: "Prof. Praveen Ku. Yadav, HoD Oil Tech., HBTU Kanpur",
+        name: 'Prof. Praveen Ku. Yadav, HoD Oil Tech., HBTU Kanpur',
         img: PraveenYadavImg,
       },
-     
     ],
   },
 ];

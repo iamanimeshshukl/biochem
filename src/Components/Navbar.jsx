@@ -128,7 +128,7 @@ const Navbar = () => {
                 <ul className="absolute left-0 mt-2 w-48 bg-blue-700 text-white rounded-md shadow-lg transition-opacity duration-200">
                   {[
                     { label: 'Programs', href: '/scientific-programs' },
-                    { label: 'Speakers', href: '/scientific-programs/speakers' },
+                    { label: 'Speakers', href: '/scientific-programs/spekers' },
                   ].map((item, idx) => (
                     <li
                       key={idx}
