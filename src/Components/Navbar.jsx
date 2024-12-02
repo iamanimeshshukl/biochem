@@ -348,7 +348,7 @@ const Navbar = () => {
                 <ul className="mt-2 w-full bg-blue-700 text-white rounded-md shadow-lg">
                   {[
                     { label: 'Programs', href: '/scientific-programs' },
-                    { label: 'Speakers', href: '/scientific-programs/speakers' },
+                    { label: 'Speakers', href: '/scientifc-programs/speakers' },
                   ].map((item, idx) => (
                     <li key={idx} className="hover:bg-blue-600">
                       <a href={item.href} className="block px-4 py-2">

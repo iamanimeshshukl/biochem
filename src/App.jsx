@@ -11,10 +11,10 @@ import RegistrationSponsorship from './pages/RegistrationSponsorship';
 import GeneralInfo from './pages/GeneralInfo';
 import Biometaconteam from './pages/Biometaconteam.jsx';
 import Contacts from './pages/Contacts';
-import Home from "./pages/Home.jsx"
-import Theme from "./Components/Theme.jsx"
-import Discover from "./pages/Discover.jsx"
-import Spekers from './pages/Spekers.jsx';
+import Home from "./pages/Home.jsx";
+import Theme from "./Components/Theme.jsx";
+import Discover from "./pages/Discover.jsx";
+import Speakers from './pages/Speakers.jsx';
 
 const App = () => {
   return (
@@ -35,7 +35,7 @@ const App = () => {
         <Route path="/general-info" element={<GeneralInfo />} />
         <Route path="/biometacon" element={<Biometaconteam />} />
         <Route path="/contacts" element={<Contacts />} />
-        <Route path="/speakers" element={<Spekers />} />
+        <Route path="/speakers" element={<Speakers/>}/>
       </Routes>
       <Footer /> 
     </Router>
