@@ -4,12 +4,12 @@ const committeeData = [
     members: [
       {
         name: "Prof. Samsher, Hon'ble Vice Chancellor, HBTU Kanpur",
-        img: "src/assets/committee_data/Samsher.png", // Replace with the actual image path
+        img: "src/assets/committee_data/Samsher.png~", // Replace with the actual image path
       },
     ],
   },
   {
-    title: "Patron",
+    title: "Patrons",
     members: [
       {
         name: "Prof. Dipteek Parmar, Pro-VC, HBTU Kanpur",
@@ -22,7 +22,7 @@ const committeeData = [
     ],
   },
   {
-    title: "Chairperson",
+    title: "Chairpersons",
     members: [
       {
         name: "Prof. Lalit Kumar Singh, HoD Biochemical Engg., HBTU Kanpur",
@@ -44,7 +44,7 @@ const committeeData = [
     ],
   },
   {
-    title: "Conveyor",
+    title: "Conveners",
     members: [
       {
         name: "Dr. Shravan Kumar, Assistant Professor, Biochemical Engg., HBTU Kanpur",
@@ -57,7 +57,7 @@ const committeeData = [
     ],
   },
   {
-    title: "Coordinator",
+    title: "Coordinators",
     members: [
       {
         name: "Ms. Roma Agrahari, Assistant Professor, Biochemical Engg., HBTU Kanpur",
@@ -65,7 +65,7 @@ const committeeData = [
       },
       {
         name: "Ms. Priyanka Mishra, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur",
-        img: "src/assets/committee_data/Priyanka.jpg", // Replace with the actual image path
+        img: "path-to-image/ms-priyanka.jpg", // Replace with the actual image path
       },
       {
         name: "Dr. Mamta Kumari, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur",
@@ -73,7 +73,7 @@ const committeeData = [
       },
       {
         name: "Mr. Ashish Kumar Gupta, Assistant Professor, Biochemical Engg. (B.Pharm.), HBTU Kanpur",
-        img: "src/assets/committee_data/Ashish Kumar Gupta.jpg", // Replace with the actual image path
+        img: "path-to-image/mr-ashish.jpg", // Replace with the actual image path
       },
       {
         name: "Mr. Mohit Kumar Yadav, Guest Faculty, Biochemical Engg., HBTU Kanpur",
@@ -86,25 +86,28 @@ const committeeData = [
     members: [
       {
         name: "Prof. Ashish Kapoor, HoD Chemical Engg., HBTU Kanpur",
-        img: "src/assets/committee_data/Ashish Kapoor.jpg", // Replace with the actual image path
+        img: "path-to-image/prof-ashish.jpg", // Replace with the actual image path
       },
       {
         name: "Prof. Arun Maithani, HoD Paint Tech., HBTU Kanpur",
-        img: "src/assets/committee_data/Arun Maithani.jpg", // Replace with the actual image path
+        img: "path-to-image/prof-arun.jpg", // Replace with the actual image path
       },
       {
         name: "Prof. Indira Nigam, HoD Plastic Tech., HBTU Kanpur",
-        img: "src/assets/committee_data/Indra Nigam.jpg", // Replace with the actual image path
+        img: "path-to-image/prof-indira.jpg", // Replace with the actual image path
       },
       {
         name: "Prof. Vivek Kumar, HoD Food Tech., HBTU Kanpur",
-        img: "src/assets/committee_data/Vivek Kumar.jpg", // Replace with the actual image path
+        img: "path-to-image/prof-vivek.jpg", // Replace with the actual image path
       },
       {
-        name: "Prof. Praveen Ku. Singh Yadav, HoD Oil Tech., HBTU Kanpur",
-        img: "src/assets/committee_data/Praveen Kumar Singh Yadav.jpg", // Replace with the actual image path
+        name: "Prof. Praveen Ku. Yadav, HoD Oil Tech., HBTU Kanpur",
+        img: "path-to-image/prof-praveen.jpg", // Replace with the actual image path
       },
-     
+      {
+        name: "Mr. Sumant Chatterjee, HoD Leather Tech., HBTU Kanpur",
+        img: "path-to-image/mr-sumant.jpg", // Replace with the actual image path
+      },
     ],
   },
 ];
