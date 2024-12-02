@@ -17,7 +17,7 @@ import ArunMaithaniImg from '../assets/committee_data/Arun Maithani.jpg';
 import IndiraNigamImg from '../assets/committee_data/Indra Nigam.jpg';
 import VivekKumarImg from '../assets/committee_data/Vivek Kumar.jpg';
 import PraveenYadavImg from '../assets/committee_data/Praveen Kumar Singh Yadav.jpg';
-import SumantChatterjeeImg from '../assets/committee_data/Sumant.jpg';
+
 
 // Committee data array
 const committeeData = [

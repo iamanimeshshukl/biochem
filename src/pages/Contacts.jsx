@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import bg from "../assets/bg.png";
 const Contacts = () => {
   return (
     <div className="container mx-auto py-10 relative perspective-1000"
     style={{
-      backgroundImage: "url('src/assets/bg.png')",
+      backgroundImage: `url(${bg})`,
       backgroundSize: "cover", // Ensures the image scales proportionally to cover the area
       backgroundRepeat: "no-repeat", // Prevents tiling of the image
       backgroundPosition: "center center", // Centers the image both horizontally and vertically
