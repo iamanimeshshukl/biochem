@@ -152,15 +152,7 @@ const About = () => {
                  The Department of Biochemical Engineering at Harcourt Butler Technical University (HBTU), Kanpur, is proud to present "BIO-METACON 2025," an International Conference themed "Advances in Biorefinery: Opportunity and Challenges", scheduled for 29th-31st March 2025. The event aims to foster cutting-edge discussions and innovations in biorefinery technologies, a crucial field at the intersection of sustainability and industrial advancement.
               </motion.p>
               <div className="mt-8">
-                <a
-                  href="https://hbtu.ac.in/bio-chemical-engineering-2/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-600 font-medium"
-                >
-                  Learn more about us
-                  <span className="ml-2">→</span>
-                </a>
+               
               </div>
             </div>
             <div className="mt-12 md:mt-0">

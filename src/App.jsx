@@ -9,7 +9,7 @@ import Publications from './pages/Publications';
 import ScientificPrograms from './pages/ScientificPrograms';
 import RegistrationSponsorship from './pages/RegistrationSponsorship';
 import GeneralInfo from './pages/GeneralInfo';
-import IBSTeam from './pages/IBSTeam';
+import Biometaconteam from './pages/Biometaconteam.jsx';
 import Contacts from './pages/Contacts';
 import Home from "./pages/Home.jsx"
 import Theme from "./Components/Theme.jsx"
@@ -33,7 +33,7 @@ const App = () => {
         <Route path="/scientific-programs" element={<ScientificPrograms />} />
         <Route path="/registration-sponsorship" element={<RegistrationSponsorship />} />
         <Route path="/general-info" element={<GeneralInfo />} />
-        <Route path="/ibs-team" element={<IBSTeam />} />
+        <Route path="/biometacon" element={<Biometaconteam />} />
         <Route path="/contacts" element={<Contacts />} />
         
       </Routes>

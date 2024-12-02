@@ -152,7 +152,7 @@ const Navbar = () => {
                 onClick={() => toggleDropdown('registration')}
                 className="flex items-center text-base font-semibold text-white"
               >
-                Registration
+                    Registration/Sponsorship
                 <span
                   className={`ml-2 transform ${dropdown === 'registration' ? 'rotate-90' : ''} transition-transform text-xl`}
                 >
@@ -207,13 +207,13 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="/ibs-team" className="text-base font-semibold text-white">
+              <a href="/biometacon" className="text-base font-semibold text-white">
                 Bio-Metacon Team
               </a>
             </li>
             <li>
               <a href="/contacts" className="text-base font-semibold text-white">
-                Contacts
+                Contact Us
               </a>
             </li>
           </ul>
@@ -232,7 +232,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenu && (
-        <div className="lg:hidden absolute top-0 left-0 w-full h-screen bg-blue-800 z-50 flex flex-col space-y-4 pt-16 px-4">
+        <div className="lg:hidden absolute top-0 left-0 w-full h-[55vh] bg-custom-blue z-50 flex flex-col space-y-4 pt-16 px-4">
           <div className="flex justify-end mb-4">
             <button
               onClick={toggleMobileMenu}
@@ -359,7 +359,58 @@ const Navbar = () => {
                 </ul>
               )}
             </li>
-
+            <li className="relative">
+              <button
+                onClick={() => toggleDropdown('registration')}
+                className="flex items-center text-base font-semibold text-white"
+              >
+                Registration/Sponsorship
+                <span
+                  className={`ml-2 transform ${dropdown === 'registration' ? 'rotate-90' : ''} transition-transform text-xl`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="text-white"
+                  >
+                    <path d="M3 4l3 3 3-3" />
+                  </svg>
+                </span>
+              </button>
+              {dropdown === 'registration' && (
+                <ul className="absolute left-0 mt-2 w-48 bg-blue-700 text-white rounded-md shadow-lg transition-opacity duration-200">
+                  {[
+                    { label: 'Register', href: '/registration' },
+                    { label: 'Sponsorship', href: '/registration-sponsorship' },
+                    {
+                      label: 'Fee Payment',
+                      href: 'https://drive.google.com/file/d/1nK-3m8jbaTCKNtsCQ2I6s6kAhQW8HhAs/preview',
+                      target: '_blank',
+                      rel: 'noopener noreferrer',
+                    },
+                  ].map((item, idx) => (
+                    <li
+                      key={idx}
+                      className={`hover:bg-blue-600 ${idx > 0 ? 'border-t border-blue-600' : ''}`}
+                    >
+                      <a
+                        href={item.href}
+                        target={item.target || '_self'}
+                        rel={item.rel || ''}
+                        className="block px-4 py-2"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
            
 
             {/* Other Links */}
@@ -375,7 +426,7 @@ const Navbar = () => {
             </li>
             <li>
               <a href="/contacts" className="text-base font-semibold text-white">
-                Contacts
+                Contact Us
               </a>
             </li>
           </ul>
