@@ -14,7 +14,7 @@ import Contacts from './pages/Contacts';
 import Home from "./pages/Home.jsx"
 import Theme from "./Components/Theme.jsx"
 import Discover from "./pages/Discover.jsx"
-
+import Spekers from './pages/Spekers.jsx';
 
 const App = () => {
   return (
@@ -35,7 +35,7 @@ const App = () => {
         <Route path="/general-info" element={<GeneralInfo />} />
         <Route path="/biometacon" element={<Biometaconteam />} />
         <Route path="/contacts" element={<Contacts />} />
-        
+        <Route path="/speakers" element={<Spekers />} />
       </Routes>
       <Footer /> 
     </Router>
