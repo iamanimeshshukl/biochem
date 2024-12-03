@@ -27,10 +27,9 @@ const Home = () => {
     }}
   >
     <Carousel />
+    <br></br>
     <Biometacon />
-    <br />
-  
-    <br />
+    <Hero />
     <br />
     <Timeline />
   

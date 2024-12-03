@@ -54,7 +54,7 @@ const Navbar = () => {
               {dropdown === 'abstracts' && (
                 <ul className="absolute left-0 mt-2 w-48 bg-blue-700 text-white rounded-md shadow-lg transition-opacity duration-200">
                   {[
-                  { label: 'General', href: '/abstracts' },
+                  { label: 'Abstract Submission', href: '/abstracts' },
                   {
                     label: 'Themes',
                     href: 'https://drive.google.com/file/d/1b43u6fjTBSs9tq27UddLKRH9IssKkcdH/preview',
@@ -279,7 +279,7 @@ const Navbar = () => {
               {dropdown === 'abstracts' && (
                 <ul className="mt-2 w-full bg-blue-700 text-white rounded-md shadow-lg">
                   {[
-                     { label: 'General', href: '/abstracts' },
+                     { label: 'Abstract Submission', href: '/abstracts' },
                      {
                        label: 'Themes',
                        href: 'https://drive.google.com/file/d/1b43u6fjTBSs9tq27UddLKRH9IssKkcdH/preview',

@@ -21,7 +21,7 @@ const Hero = () => {
   return (
     <section
       ref={ref}
-      className="relative flex h-[100vh] items-center justify-center  overflow-hidden"
+      className="relative flex h-[60vh] items-center justify-center  overflow-hidden"
     >
       {/* Content Container */}
       <motion.div
@@ -76,7 +76,7 @@ const Hero = () => {
             href="https://docs.google.com/forms/d/e/1FAIpQLSefwJ1oVHbNPddXyknDFNTlklR3ms9Sa_cDhykw1lrge7Ptbw/viewform?usp=sharing"
             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-8 py-3 text-lg font-semibold text-white shadow-lg hover:bg-gradient-to-l transition-transform transform hover:scale-105"
           >
-            Abstract Submission Details 🚀
+            Abstract Submission link 🚀
           </a>
         </motion.div>
       </motion.div>
