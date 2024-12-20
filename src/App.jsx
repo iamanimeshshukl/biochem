@@ -15,7 +15,9 @@ import Home from "./pages/Home.jsx";
 import Theme from "./Components/Theme.jsx";
 import Discover from "./pages/Discover.jsx";
 import Speakers from './pages/Speakers.jsx';
-
+import Fee from './pages/Fee.jsx';
+import Guidline from './pages/Guidline.jsx';
+import ThemeList from './pages/themelist.jsx';
 const App = () => {
   return (
 <div
@@ -36,6 +38,10 @@ const App = () => {
         <Route path="/biometacon" element={<Biometaconteam />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/speakers" element={<Speakers/>}/>
+        <Route path="/fee" element={<Fee/>}/>
+        <Route path="/guideline" element={<Guidline/>}/>
+        <Route path="/theme" element={<ThemeList/>}/>
+
       </Routes>
       <Footer /> 
     </Router>

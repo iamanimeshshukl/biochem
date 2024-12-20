@@ -57,13 +57,13 @@ const Navbar = () => {
                   { label: 'Abstract Submission', href: '/abstracts' },
                   {
                     label: 'Themes',
-                    href: 'https://drive.google.com/file/d/1b43u6fjTBSs9tq27UddLKRH9IssKkcdH/preview',
+                    href: '/theme',
                     target: '_blank',
                     rel: 'noopener noreferrer',
                   },
                   {
                     label: 'Guidelines',
-                    href: 'https://drive.google.com/file/d/1DYAA29_JL3WkdS_z6C2ScpxqheFTgWsY/preview',
+                    href: '/guideline',
                     target: '_blank',
                     rel: 'noopener noreferrer',
                   },
@@ -177,7 +177,7 @@ const Navbar = () => {
                     { label: 'Sponsorship', href: '/registration-sponsorship' },
                     {
                       label: 'Fee Payment',
-                      href: 'https://drive.google.com/file/d/1nK-3m8jbaTCKNtsCQ2I6s6kAhQW8HhAs/preview',
+                      href: '/fee',
                       target: '_blank',
                       rel: 'noopener noreferrer',
                     },
@@ -389,7 +389,7 @@ const Navbar = () => {
                     { label: 'Sponsorship', href: '/registration-sponsorship' },
                     {
                       label: 'Fee Payment',
-                      href: 'https://drive.google.com/file/d/1nK-3m8jbaTCKNtsCQ2I6s6kAhQW8HhAs/preview',
+                      href: '/fee',
                       target: '_blank',
                       rel: 'noopener noreferrer',
                     },
